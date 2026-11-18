@@ -1,0 +1,3 @@
+
+FM-07 | PASS | paired; 1 card(s); first callsign MC-01; port 60000
+FM-08 | PASS | minimized=True hwnd=76615482; chip FOCUSED; fghwnd=76615482 targethwnd=76615482 match=True fgpid=8488 fgname=WindowsTerminal targetIconic=False; MC-FM pid 26832

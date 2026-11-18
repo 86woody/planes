@@ -1,0 +1,176 @@
+[
+  {
+    "env": { "MC_HOME": "/mc-home" },
+    "platform": "linux",
+    "home": "/home/you",
+    "expected": {
+      "configDir": "/mc-home/config",
+      "stateDir": "/mc-home/state",
+      "configFile": "/mc-home/config/config.json",
+      "tokenFile": "/mc-home/state/token",
+      "daemonFile": "/mc-home/state/daemon.json",
+      "sessionsFile": "/mc-home/state/sessions.json",
+      "eventsFile": "/mc-home/state/events.jsonl",
+      "spoolDir": "/mc-home/state/spool",
+      "hookErrorsFile": "/mc-home/state/hook-errors.log",
+      "logFile": "/mc-home/state/daemon.log",
+      "fakePlatformFile": "/mc-home/state/fake-platform.jsonl",
+      "installManifestFile": "/mc-home/state/install-manifest.json"
+    }
+  },
+  {
+    "env": { "MC_HOME": "/mc-home" },
+    "platform": "darwin",
+    "home": "/Users/you",
+    "expected": {
+      "configDir": "/mc-home/config",
+      "stateDir": "/mc-home/state",
+      "configFile": "/mc-home/config/config.json",
+      "tokenFile": "/mc-home/state/token",
+      "daemonFile": "/mc-home/state/daemon.json",
+      "sessionsFile": "/mc-home/state/sessions.json",
+      "eventsFile": "/mc-home/state/events.jsonl",
+      "spoolDir": "/mc-home/state/spool",
+      "hookErrorsFile": "/mc-home/state/hook-errors.log",
+      "logFile": "/mc-home/state/daemon.log",
+      "fakePlatformFile": "/mc-home/state/fake-platform.jsonl",
+      "installManifestFile": "/mc-home/state/install-manifest.json"
+    }
+  },
+  {
+    "env": { "MC_HOME": "C:\\mc-home" },
+    "platform": "win32",
+    "home": "C:\\Users\\you",
+    "expected": {
+      "configDir": "C:\\mc-home\\config",
+      "stateDir": "C:\\mc-home\\state",
+      "configFile": "C:\\mc-home\\config\\config.json",
+      "tokenFile": "C:\\mc-home\\state\\token",
+      "daemonFile": "C:\\mc-home\\state\\daemon.json",
+      "sessionsFile": "C:\\mc-home\\state\\sessions.json",
+      "eventsFile": "C:\\mc-home\\state\\events.jsonl",
+      "spoolDir": "C:\\mc-home\\state\\spool",
+      "hookErrorsFile": "C:\\mc-home\\state\\hook-errors.log",
+      "logFile": "C:\\mc-home\\state\\daemon.log",
+      "fakePlatformFile": "C:\\mc-home\\state\\fake-platform.jsonl",
+      "installManifestFile": "C:\\mc-home\\state\\install-manifest.json"
+    }
+  },
+  {
+    "env": {
+      "APPDATA": "C:\\Users\\you\\AppData\\Roaming",
+      "LOCALAPPDATA": "C:\\Users\\you\\AppData\\Local"
+    },
+    "platform": "win32",
+    "home": "C:\\Users\\you",
+    "expected": {
+      "configDir": "C:\\Users\\you\\AppData\\Roaming\\mission-control",
+      "stateDir": "C:\\Users\\you\\AppData\\Local\\mission-control",
+      "configFile": "C:\\Users\\you\\AppData\\Roaming\\mission-control\\config.json",
+      "tokenFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\token",
+      "daemonFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\daemon.json",
+      "sessionsFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\sessions.json",
+      "eventsFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\events.jsonl",
+      "spoolDir": "C:\\Users\\you\\AppData\\Local\\mission-control\\spool",
+      "hookErrorsFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\hook-errors.log",
+      "logFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\daemon.log",
+      "fakePlatformFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\fake-platform.jsonl",
+      "installManifestFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\install-manifest.json"
+    }
+  },
+  {
+    "env": {},
+    "platform": "win32",
+    "home": "C:\\Users\\you",
+    "expected": {
+      "configDir": "C:\\Users\\you\\AppData\\Roaming\\mission-control",
+      "stateDir": "C:\\Users\\you\\AppData\\Local\\mission-control",
+      "configFile": "C:\\Users\\you\\AppData\\Roaming\\mission-control\\config.json",
+      "tokenFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\token",
+      "daemonFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\daemon.json",
+      "sessionsFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\sessions.json",
+      "eventsFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\events.jsonl",
+      "spoolDir": "C:\\Users\\you\\AppData\\Local\\mission-control\\spool",
+      "hookErrorsFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\hook-errors.log",
+      "logFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\daemon.log",
+      "fakePlatformFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\fake-platform.jsonl",
+      "installManifestFile": "C:\\Users\\you\\AppData\\Local\\mission-control\\install-manifest.json"
+    }
+  },
+  {
+    "env": {},
+    "platform": "darwin",
+    "home": "/Users/you",
+    "expected": {
+      "configDir": "/Users/you/Library/Application Support/mission-control",
+      "stateDir": "/Users/you/Library/Application Support/mission-control/state",
+      "configFile": "/Users/you/Library/Application Support/mission-control/config.json",
+      "tokenFile": "/Users/you/Library/Application Support/mission-control/state/token",
+      "daemonFile": "/Users/you/Library/Application Support/mission-control/state/daemon.json",
+      "sessionsFile": "/Users/you/Library/Application Support/mission-control/state/sessions.json",
+      "eventsFile": "/Users/you/Library/Application Support/mission-control/state/events.jsonl",
+      "spoolDir": "/Users/you/Library/Application Support/mission-control/state/spool",
+      "hookErrorsFile": "/Users/you/Library/Application Support/mission-control/state/hook-errors.log",
+      "logFile": "/Users/you/Library/Application Support/mission-control/state/daemon.log",
+      "fakePlatformFile": "/Users/you/Library/Application Support/mission-control/state/fake-platform.jsonl",
+      "installManifestFile": "/Users/you/Library/Application Support/mission-control/state/install-manifest.json"
+    }
+  },
+  {
+    "env": {},
+    "platform": "linux",
+    "home": "/home/you",
+    "expected": {
+      "configDir": "/home/you/.config/mission-control",
+      "stateDir": "/home/you/.local/state/mission-control",
+      "configFile": "/home/you/.config/mission-control/config.json",
+      "tokenFile": "/home/you/.local/state/mission-control/token",
+      "daemonFile": "/home/you/.local/state/mission-control/daemon.json",
+      "sessionsFile": "/home/you/.local/state/mission-control/sessions.json",
+      "eventsFile": "/home/you/.local/state/mission-control/events.jsonl",
+      "spoolDir": "/home/you/.local/state/mission-control/spool",
+      "hookErrorsFile": "/home/you/.local/state/mission-control/hook-errors.log",
+      "logFile": "/home/you/.local/state/mission-control/daemon.log",
+      "fakePlatformFile": "/home/you/.local/state/mission-control/fake-platform.jsonl",
+      "installManifestFile": "/home/you/.local/state/mission-control/install-manifest.json"
+    }
+  },
+  {
+    "env": { "XDG_CONFIG_HOME": "/xdg/config", "XDG_STATE_HOME": "/xdg/state" },
+    "platform": "linux",
+    "home": "/home/you",
+    "expected": {
+      "configDir": "/xdg/config/mission-control",
+      "stateDir": "/xdg/state/mission-control",
+      "configFile": "/xdg/config/mission-control/config.json",
+      "tokenFile": "/xdg/state/mission-control/token",
+      "daemonFile": "/xdg/state/mission-control/daemon.json",
+      "sessionsFile": "/xdg/state/mission-control/sessions.json",
+      "eventsFile": "/xdg/state/mission-control/events.jsonl",
+      "spoolDir": "/xdg/state/mission-control/spool",
+      "hookErrorsFile": "/xdg/state/mission-control/hook-errors.log",
+      "logFile": "/xdg/state/mission-control/daemon.log",
+      "fakePlatformFile": "/xdg/state/mission-control/fake-platform.jsonl",
+      "installManifestFile": "/xdg/state/mission-control/install-manifest.json"
+    }
+  },
+  {
+    "env": { "XDG_CONFIG_HOME": "/xdg/config" },
+    "platform": "linux",
+    "home": "/home/you",
+    "expected": {
+      "configDir": "/xdg/config/mission-control",
+      "stateDir": "/home/you/.local/state/mission-control",
+      "configFile": "/xdg/config/mission-control/config.json",
+      "tokenFile": "/home/you/.local/state/mission-control/token",
+      "daemonFile": "/home/you/.local/state/mission-control/daemon.json",
+      "sessionsFile": "/home/you/.local/state/mission-control/sessions.json",
+      "eventsFile": "/home/you/.local/state/mission-control/events.jsonl",
+      "spoolDir": "/home/you/.local/state/mission-control/spool",
+      "hookErrorsFile": "/home/you/.local/state/mission-control/hook-errors.log",
+      "logFile": "/home/you/.local/state/mission-control/daemon.log",
+      "fakePlatformFile": "/home/you/.local/state/mission-control/fake-platform.jsonl",
+      "installManifestFile": "/home/you/.local/state/mission-control/install-manifest.json"
+    }
+  }
+]

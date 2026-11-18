@@ -1,0 +1,48 @@
+{
+  "id": "claude-code:fixture-needs_input",
+  "adapter": "claude-code",
+  "nativeId": "fixture-needs_input",
+  "callsign": "MC-04",
+  "title": "Fixture session",
+  "cwd": "C:Fixturesproject",
+  "project": "project",
+  "branch": "main",
+  "state": "needs_input",
+  "attention": {
+    "active": true,
+    "reason": "input",
+    "since": "2026-11-12T09:03:00.000Z",
+    "acknowledged": false,
+    "message": "Claude is waiting for your input"
+  },
+  "startedAt": "2026-11-12T08:00:00.000Z",
+  "updatedAt": "2026-11-12T09:03:00.000Z",
+  "lastEvent": {
+    "name": "Notification",
+    "at": "2026-11-12T09:03:00.000Z",
+    "summary": "Waiting for input"
+  },
+  "process": {
+    "agentPid": 3131,
+    "alive": true
+  },
+  "host": {
+    "kind": "windows-terminal",
+    "app": "WindowsTerminal.exe",
+    "os": "windows",
+    "display": "win32",
+    "multiplexer": null
+  },
+  "restore": {
+    "capability": "full",
+    "reason": null,
+    "lastResult": null
+  },
+  "stats": {
+    "prompts": 2,
+    "tools": 5,
+    "notifications": 0,
+    "events": 12
+  },
+  "endReason": null
+}

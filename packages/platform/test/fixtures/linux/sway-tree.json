@@ -1,0 +1,23 @@
+{
+  "id": 1,
+  "type": "root",
+  "nodes": [
+    {
+      "id": 2,
+      "type": "output",
+      "nodes": [
+        {
+          "id": 3,
+          "type": "workspace",
+          "nodes": [
+            { "id": 10, "type": "con", "name": "Claude - project-x", "pid": 4321, "app_id": "foot", "focused": false, "fullscreen_mode": 0, "nodes": [] },
+            { "id": 11, "type": "con", "name": "htop", "pid": 4500, "app_id": "foot", "focused": true, "fullscreen_mode": 0, "nodes": [] }
+          ],
+          "floating_nodes": [
+            { "id": 12, "type": "floating_con", "name": "float", "pid": 4321, "app_id": "foot", "focused": false, "nodes": [] }
+          ]
+        }
+      ]
+    }
+  ]
+}

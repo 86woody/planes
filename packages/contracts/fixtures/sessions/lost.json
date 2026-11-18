@@ -1,0 +1,48 @@
+{
+  "id": "claude-code:fixture-lost",
+  "adapter": "claude-code",
+  "nativeId": "fixture-lost",
+  "callsign": "MC-08",
+  "title": "Fixture session",
+  "cwd": "C:Fixturesproject",
+  "project": "project",
+  "branch": "main",
+  "state": "lost",
+  "attention": {
+    "active": false,
+    "reason": null,
+    "since": null,
+    "acknowledged": false,
+    "message": null
+  },
+  "startedAt": "2026-11-12T08:00:00.000Z",
+  "updatedAt": "2026-11-12T09:07:00.000Z",
+  "lastEvent": {
+    "name": "PostToolUse",
+    "at": "2026-11-12T09:07:00.000Z",
+    "summary": "Tool: Bash"
+  },
+  "process": {
+    "agentPid": null,
+    "alive": null
+  },
+  "host": {
+    "kind": "windows-terminal",
+    "app": "WindowsTerminal.exe",
+    "os": "windows",
+    "display": "win32",
+    "multiplexer": null
+  },
+  "restore": {
+    "capability": "none",
+    "reason": "process_ended",
+    "lastResult": null
+  },
+  "stats": {
+    "prompts": 2,
+    "tools": 5,
+    "notifications": 0,
+    "events": 12
+  },
+  "endReason": "lost"
+}

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960">
+<title>How Mission Control works</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C5D2E0"/></marker><marker id="ahT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00C2A8"/></marker></defs>
+<rect width="1600" height="960" fill="#0F1B2D"/>
+<text x="80" y="80" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#00C2A8" font-weight="700" text-anchor="start" opacity="1">MISSION CONTROL</text>
+<text x="80" y="128" font-family="'Segoe UI', Arial, sans-serif" font-size="36" fill="#FFFFFF" font-weight="700" text-anchor="start" opacity="1">How it works — from agent event to restored window</text>
+<text x="80" y="172" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">One loop for every session on this machine. Nothing leaves 127.0.0.1.</text>
+<g opacity="1">
+<rect x="70" y="240" width="460" height="290" rx="22" fill="#00C2A8" opacity="0.14"/>
+<rect x="80" y="250" width="440" height="270" rx="16" fill="#162740" stroke="#00C2A8" stroke-width="4"/>
+<circle cx="132" cy="304" r="30" fill="#00C2A8"/>
+<text x="132" y="314" font-family="'Segoe UI', Arial, sans-serif" font-size="28" fill="#0F1B2D" font-weight="800" text-anchor="middle" opacity="1">1</text>
+<text x="180" y="314" font-family="'Segoe UI', Arial, sans-serif" font-size="30" fill="#FFFFFF" font-weight="700" text-anchor="start" opacity="1">Agent event</text>
+<text x="106" y="374" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">An agent asks for permission, waits</text>
+<text x="106" y="401" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">for input or ends a turn. Its hook</text>
+<text x="106" y="428" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">starts mc-hook.</text>
+<rect x="102" y="456" width="396" height="42" rx="8" fill="#101824"/>
+<text x="118" y="484" font-family="Consolas, 'Courier New', monospace" font-size="17" fill="#00C2A8" font-weight="400" text-anchor="start" opacity="1">PermissionRequest</text>
+</g>
+<g opacity="1">
+<rect x="570" y="240" width="460" height="290" rx="22" fill="#FFB454" opacity="0.14"/>
+<rect x="580" y="250" width="440" height="270" rx="16" fill="#162740" stroke="#FFB454" stroke-width="4"/>
+<circle cx="632" cy="304" r="30" fill="#FFB454"/>
+<text x="632" y="314" font-family="'Segoe UI', Arial, sans-serif" font-size="28" fill="#0F1B2D" font-weight="800" text-anchor="middle" opacity="1">2</text>
+<text x="680" y="314" font-family="'Segoe UI', Arial, sans-serif" font-size="30" fill="#FFFFFF" font-weight="700" text-anchor="start" opacity="1">mc-hook</text>
+<text x="606" y="374" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">mc-hook reads the event and finds the</text>
+<text x="606" y="401" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">terminal window. It sends the event to</text>
+<text x="606" y="428" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">the daemon.</text>
+<rect x="602" y="456" width="396" height="42" rx="8" fill="#101824"/>
+<text x="618" y="484" font-family="Consolas, 'Courier New', monospace" font-size="17" fill="#00C2A8" font-weight="400" text-anchor="start" opacity="1">POST /ingest/v1/events</text>
+</g>
+<g opacity="1">
+<rect x="1070" y="240" width="460" height="290" rx="22" fill="#00C2A8" opacity="0.14"/>
+<rect x="1080" y="250" width="440" height="270" rx="16" fill="#162740" stroke="#00C2A8" stroke-width="4"/>
+<circle cx="1132" cy="304" r="30" fill="#00C2A8"/>
+<text x="1132" y="314" font-family="'Segoe UI', Arial, sans-serif" font-size="28" fill="#0F1B2D" font-weight="800" text-anchor="middle" opacity="1">3</text>
+<text x="1180" y="314" font-family="'Segoe UI', Arial, sans-serif" font-size="30" fill="#FFFFFF" font-weight="700" text-anchor="start" opacity="1">Daemon</text>
+<text x="1106" y="374" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">The reducer sets the new state. The</text>
+<text x="1106" y="401" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">store keeps the session and its window</text>
+<text x="1106" y="428" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">target.</text>
+<rect x="1102" y="456" width="396" height="42" rx="8" fill="#101824"/>
+<text x="1118" y="484" font-family="Consolas, 'Courier New', monospace" font-size="17" fill="#00C2A8" font-weight="400" text-anchor="start" opacity="1">working → needs_permission</text>
+</g>
+<g opacity="1">
+<rect x="1070" y="610" width="460" height="290" rx="22" fill="#FFB454" opacity="0.14"/>
+<rect x="1080" y="620" width="440" height="270" rx="16" fill="#162740" stroke="#FFB454" stroke-width="4"/>
+<circle cx="1132" cy="674" r="30" fill="#FFB454"/>
+<text x="1132" y="684" font-family="'Segoe UI', Arial, sans-serif" font-size="28" fill="#0F1B2D" font-weight="800" text-anchor="middle" opacity="1">4</text>
+<text x="1180" y="684" font-family="'Segoe UI', Arial, sans-serif" font-size="30" fill="#FFFFFF" font-weight="700" text-anchor="start" opacity="1">Board</text>
+<text x="1106" y="744" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">The WebSocket sends the card to the</text>
+<text x="1106" y="771" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">page. The card turns red and the lamp</text>
+<text x="1106" y="798" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">blinks.</text>
+<rect x="1102" y="826" width="396" height="42" rx="8" fill="#101824"/>
+<text x="1118" y="854" font-family="Consolas, 'Courier New', monospace" font-size="17" fill="#7EE7B8" font-weight="400" text-anchor="start" opacity="1">GO/NO-GO</text>
+</g>
+<g opacity="1">
+<rect x="570" y="610" width="460" height="290" rx="22" fill="#00C2A8" opacity="0.14"/>
+<rect x="580" y="620" width="440" height="270" rx="16" fill="#162740" stroke="#00C2A8" stroke-width="4"/>
+<circle cx="632" cy="674" r="30" fill="#00C2A8"/>
+<text x="632" y="684" font-family="'Segoe UI', Arial, sans-serif" font-size="28" fill="#0F1B2D" font-weight="800" text-anchor="middle" opacity="1">5</text>
+<text x="680" y="684" font-family="'Segoe UI', Arial, sans-serif" font-size="30" fill="#FFFFFF" font-weight="700" text-anchor="start" opacity="1">Notification</text>
+<text x="606" y="744" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">The window is not in front, so the</text>
+<text x="606" y="771" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">daemon shows an OS notification.</text>
+<rect x="602" y="826" width="396" height="42" rx="8" fill="#101824"/>
+<text x="618" y="854" font-family="Consolas, 'Courier New', monospace" font-size="17" fill="#00C2A8" font-weight="400" text-anchor="start" opacity="1">toast · D-Bus · notifier</text>
+</g>
+<g opacity="1">
+<rect x="70" y="610" width="460" height="290" rx="22" fill="#FFB454" opacity="0.14"/>
+<rect x="80" y="620" width="440" height="270" rx="16" fill="#162740" stroke="#FFB454" stroke-width="4"/>
+<circle cx="132" cy="674" r="30" fill="#FFB454"/>
+<text x="132" y="684" font-family="'Segoe UI', Arial, sans-serif" font-size="28" fill="#0F1B2D" font-weight="800" text-anchor="middle" opacity="1">6</text>
+<text x="180" y="684" font-family="'Segoe UI', Arial, sans-serif" font-size="30" fill="#FFFFFF" font-weight="700" text-anchor="start" opacity="1">Restore</text>
+<text x="106" y="744" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">Click the toast or RESTORE. The window</text>
+<text x="106" y="771" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">comes forward, maximized. The alert is</text>
+<text x="106" y="798" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#AFBECF" font-weight="400" text-anchor="start" opacity="1">acknowledged.</text>
+<rect x="102" y="826" width="396" height="42" rx="8" fill="#101824"/>
+<text x="118" y="854" font-family="Consolas, 'Courier New', monospace" font-size="17" fill="#7EE7B8" font-weight="400" text-anchor="start" opacity="1">focus(target, maximize)</text>
+</g>
+<g opacity="1">
+<line x1="526" y1="385.0" x2="572" y2="385.0" stroke="#00C2A8" stroke-width="2" marker-end="url(#ahT)"/>
+</g>
+<g opacity="1">
+<line x1="1026" y1="385.0" x2="1072" y2="385.0" stroke="#00C2A8" stroke-width="2" marker-end="url(#ahT)"/>
+</g>
+<g opacity="1">
+<line x1="1300.0" y1="526" x2="1300.0" y2="612" stroke="#00C2A8" stroke-width="2" marker-end="url(#ahT)"/>
+</g>
+<g opacity="1">
+<line x1="1074" y1="755.0" x2="1028" y2="755.0" stroke="#00C2A8" stroke-width="2" marker-end="url(#ahT)"/>
+</g>
+<g opacity="1">
+<line x1="574" y1="755.0" x2="528" y2="755.0" stroke="#00C2A8" stroke-width="2" marker-end="url(#ahT)"/>
+</g>
+<g opacity="1">
+<line x1="56" y1="750" x2="56" y2="400" stroke="#00C2A8" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ahT)"/>
+<text x="34" y="580" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#C5D2E0" transform="rotate(-90 34 580)" text-anchor="middle">next event, same card</text>
+</g>
+<text x="800" y="930" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#C5D2E0" font-weight="600" text-anchor="middle" opacity="1">The card stays live until the session ends (SPLASHDOWN) or is lost (LOS).</text>
+</svg>

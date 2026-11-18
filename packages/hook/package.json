@@ -1,0 +1,24 @@
+{
+  "name": "@mc/hook",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "mc-hook": "./dist/mc-hook.js"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "@mc/contracts": "*",
+    "@mc/platform": "*",
+    "koffi": "^2.11.0"
+  }
+}

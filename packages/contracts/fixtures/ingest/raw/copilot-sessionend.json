@@ -1,0 +1,7 @@
+{
+  "session_id": "cp-fixture-1",
+  "timestamp": "2026-11-12T20:20:00.000Z",
+  "cwd": "C:\\Fixtures\\project",
+  "hook_event_name": "SessionEnd",
+  "reason": "user_exit"
+}

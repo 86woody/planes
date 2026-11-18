@@ -1,0 +1,11 @@
+{
+  "origin": {"os":"windows","env":{"WT_SESSION":"f3a1"},"ancestry":[{"pid":5100,"name":"claude.exe","startTime":"133000000000000100"},{"pid":5050,"name":"pwsh.exe","startTime":"133000000000000050"},{"pid":5000,"name":"WindowsTerminal.exe","startTime":"133000000000000010"}],"console":{"consoleHwnd":"0x0000000000000B01","ownerHwnd":"0x0000000000000C01"}},
+  "host": {"kind":"windows-terminal","app":"WindowsTerminal.exe","display":"win32","multiplexer":null,"os":"windows"},
+  "windows": [
+    {"hwnd":"0x0000000000000C01","pid":5000,"exe":"WindowsTerminal.exe","className":"CASCADIA_HOSTING_WINDOW_CLASS","title":"Claude Code - api","visible":true,"owner":null,"rootOwner":null,"elevated":false},
+    {"hwnd":"0x0000000000000C02","pid":5000,"exe":"WindowsTerminal.exe","className":"CASCADIA_HOSTING_WINDOW_CLASS","title":"other work","visible":true,"owner":null,"rootOwner":null,"elevated":false}
+  ],
+  "lookup": [
+    {"hwnd":"0x0000000000000B01","pid":5000,"exe":"WindowsTerminal.exe","className":"PseudoConsoleWindow","title":"","visible":false,"owner":null,"rootOwner":"0x0000000000000C01","elevated":false}
+  ]
+}

@@ -1,0 +1,58 @@
+$ node scripts/gate.mjs m5
+STAGE toolchain PASS 696ms  node v24.15.0 pnpm 11.2.2 git 2.53.0.windows.3
+STAGE stubs PASS 389ms
+STAGE typecheck PASS 2732ms
+STAGE lint PASS 3535ms
+STAGE contracts PASS 1870ms
+STAGE platform-fake PASS 1701ms
+STAGE gate-self PASS 3392ms
+STAGE core PASS 1842ms
+STAGE process PASS 1747ms
+STAGE daemon PASS 4433ms
+STAGE hook PASS 5669ms
+STAGE integration FAIL 4997ms
+  | Scope: 5 of 9 workspace projects
+  | packages/contracts build$ tsc -b
+  | packages/contracts build: Done
+  | packages/platform build$ tsc -b && node ../../scripts/copy-platform-assets.mjs
+  | packages/core build$ tsc -b
+  | packages/core build: Done
+  | packages/platform build: copied 10 files to C:\Users\you\Workspace\.worktrees\mission-control\check-integration\packages\platform\dist\macos\scripts
+  | packages/platform build: Done
+  | packages/hook build$ tsc -b
+  | packages/daemon build$ tsc -b
+  | packages/hook build: Done
+  | packages/daemon build: Done
+  | 
+  |  DEPRECATED  The workspace file is deprecated and will be removed in the next major. Please, use the `test.projects` field in the root config file instead.
+  | 
+  |  RUN  v3.2.7 C:/Users/you/Workspace/.worktrees/mission-control/check-integration
+  | 
+  |  ✓ |daemon-integration| packages/daemon/test/integration/persistence.test.ts (2 tests) 541ms
+  |    ✓ persistence across daemon restarts (real processes) > PS-04 restart keeps sessions and callsigns  446ms
+  | 
+  | ⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+  | Error: Channel closed
+  |  ❯ target.send node:internal/child_process:777:16
+  |  ❯ ProcessWorker.send node_modules/.pnpm/tinypool@1.1.1/node_modules/tinypool/dist/index.js:140:41
+  |  ❯ MessagePort.<anonymous> node_modules/.pnpm/tinypool@1.1.1/node_modules/tinypool/dist/index.js:149:62
+  |  ❯ [nodejs.internal.kHybridDispatch] node:internal/event_target:843:20
+  |  ❯ MessagePort.<anonymous> node:internal/per_context/messageport:23:28
+  | 
+  | ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+  | Serialized Error: { code: 'ERR_IPC_CHANNEL_CLOSED' }
+STAGE ui-unit PASS 3473ms
+STAGE ui-build PASS 1469ms
+STAGE e2e PASS 69182ms
+STAGE platform-unit PASS 2093ms
+STAGE os PASS 7231ms
+STAGE cli PASS 10439ms
+STAGE vscode PASS 2157ms
+STAGE system PASS 6345ms
+STAGE budget PASS 18637ms
+STAGE package PASS 28311ms
+STAGE audit FAIL 392ms
+  | ids 593/601 (os=windows), skipped 0
+  | missing: IT-01,IT-02,IT-03,IT-04,IT-05,IT-06,PS-04,PS-05
+GATE m5 FAIL 21/23
+[ELIFECYCLE] Command failed with exit code 1.

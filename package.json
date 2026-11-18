@@ -1,0 +1,63 @@
+{
+  "name": "mission-control",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.12.1",
+  "workspaces": [
+    "packages/contracts",
+    "packages/platform",
+    "packages/core",
+    "packages/hook",
+    "packages/daemon",
+    "packages/ui",
+    "packages/vscode-bridge",
+    "packages/cli"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --check .",
+    "test": "vitest run",
+    "mc": "node packages/cli/dist/mc.js",
+    "gate": "node scripts/gate.mjs m5",
+    "gate:m0": "node scripts/gate.mjs m0",
+    "gate:m1": "node scripts/gate.mjs m1",
+    "gate:m2": "node scripts/gate.mjs m2",
+    "gate:m3": "node scripts/gate.mjs m3",
+    "gate:m4": "node scripts/gate.mjs m4",
+    "task:check": "node scripts/task-check.mjs",
+    "package": "node scripts/package.mjs",
+    "release": "node scripts/release.mjs",
+    "version:check": "node scripts/version.mjs check"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.55.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.25.12",
+    "eslint": "^10.14.0",
+    "jsdom": "^31.0.0",
+    "prettier": "^3.6.0",
+    "typescript": "^5.8.0",
+    "typescript-eslint": "^8.35.0",
+    "vite": "^7.0.0",
+    "vitest": "^5.1.0"
+  },
+  "overrides": {
+    "usocket": {
+      "node-gyp": "^13.1.0"
+    },
+    "dbus-next": {
+      "xml2js": "^0.6.2"
+    },
+    "minimatch@^10.0.0": "^11.0.5"
+  }
+}

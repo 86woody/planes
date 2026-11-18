@@ -1,0 +1,8 @@
+{
+  "session_id": "fixture-1",
+  "transcript_path": "C:Fixtures\transcript.jsonl",
+  "cwd": "C:Fixturesproject",
+  "permission_mode": "default",
+  "hook_event_name": "UserPromptSubmit",
+  "prompt": "Add a retry to the upload client"
+}

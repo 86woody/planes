@@ -1,0 +1,4323 @@
+{
+  "ids": {
+    "CT-01": {
+      "task": "T002",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/contracts/test/contracts.test.ts",
+      "runner": "vitest"
+    },
+    "CT-02": {
+      "task": "T002",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/contracts/test/contracts.test.ts",
+      "runner": "vitest"
+    },
+    "CT-03": {
+      "task": "T002",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/contracts/test/contracts.test.ts",
+      "runner": "vitest"
+    },
+    "CT-04": {
+      "task": "T002",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/contracts/test/contracts.test.ts",
+      "runner": "vitest"
+    },
+    "CT-05": {
+      "task": "T002",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/contracts/test/contracts.test.ts",
+      "runner": "vitest"
+    },
+    "CT-06": {
+      "task": "T002",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/contracts/test/contracts.test.ts",
+      "runner": "vitest"
+    },
+    "CT-07": {
+      "task": "T002",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/contracts/test/contracts.test.ts",
+      "runner": "vitest"
+    },
+    "CT-08": {
+      "task": "T002",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/contracts/test/contracts.test.ts",
+      "runner": "vitest"
+    },
+    "FK-01": {
+      "task": "T003",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/platform/test/fake.test.ts",
+      "runner": "vitest"
+    },
+    "FK-02": {
+      "task": "T003",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/platform/test/fake.test.ts",
+      "runner": "vitest"
+    },
+    "FK-03": {
+      "task": "T003",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/platform/test/fake.test.ts",
+      "runner": "vitest"
+    },
+    "FK-04": {
+      "task": "T003",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/platform/test/fake.test.ts",
+      "runner": "vitest"
+    },
+    "FK-05": {
+      "task": "T003",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/platform/test/fake.test.ts",
+      "runner": "vitest"
+    },
+    "FK-06": {
+      "task": "T003",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/platform/test/fake.test.ts",
+      "runner": "vitest"
+    },
+    "FK-07": {
+      "task": "T003",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/platform/test/fake.test.ts",
+      "runner": "vitest"
+    },
+    "FK-08": {
+      "task": "T003",
+      "milestone": "m0",
+      "os": "any",
+      "file": "packages/platform/test/fake.test.ts",
+      "runner": "vitest"
+    },
+    "GT-01": {
+      "task": "T004",
+      "milestone": "m0",
+      "os": "any",
+      "file": "scripts/test/gate.test.mjs",
+      "runner": "vitest"
+    },
+    "GT-02": {
+      "task": "T004",
+      "milestone": "m0",
+      "os": "any",
+      "file": "scripts/test/gate.test.mjs",
+      "runner": "vitest"
+    },
+    "GT-03": {
+      "task": "T004",
+      "milestone": "m0",
+      "os": "any",
+      "file": "scripts/test/gate.test.mjs",
+      "runner": "vitest"
+    },
+    "GT-04": {
+      "task": "T004",
+      "milestone": "m0",
+      "os": "any",
+      "file": "scripts/test/gate.test.mjs",
+      "runner": "vitest"
+    },
+    "GT-05": {
+      "task": "T004",
+      "milestone": "m0",
+      "os": "any",
+      "file": "scripts/test/gate.test.mjs",
+      "runner": "vitest"
+    },
+    "GT-06": {
+      "task": "T004",
+      "milestone": "m0",
+      "os": "any",
+      "file": "scripts/test/gate.test.mjs",
+      "runner": "vitest"
+    },
+    "SM-01": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-02": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-03": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-04": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-05": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-06": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-07": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-08": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-09": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-10": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-11": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-12": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-13": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-14": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-15": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-16": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-17": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-18": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-19": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-20": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-21": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-22": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-23": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-24": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-25": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-26": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-27": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-28": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-30": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-31": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-32": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-33": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-34": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-35": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-36": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-37": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "SM-38": {
+      "task": "T010",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/attention.test.ts",
+      "runner": "vitest"
+    },
+    "NP-01": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-02": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-03": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-04": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-05": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-06": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-07": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-08": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-09": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-10": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-11": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-12": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-13": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "NP-14": {
+      "task": "T011",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/notify-policy.test.ts",
+      "runner": "vitest"
+    },
+    "CL-01": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-02": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-03": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-04": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-05": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-06": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-07": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-08": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-09": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-10": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-11": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-12": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-13": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-14": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-15": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "CL-16": {
+      "task": "T012",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "PR-01": {
+      "task": "T013",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/platform/test/process.test.ts",
+      "runner": "vitest"
+    },
+    "PR-02": {
+      "task": "T013",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/platform/test/process.test.ts",
+      "runner": "vitest"
+    },
+    "PR-03": {
+      "task": "T013",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/platform/test/process.test.ts",
+      "runner": "vitest"
+    },
+    "PR-04": {
+      "task": "T013",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/platform/test/process.test.ts",
+      "runner": "vitest"
+    },
+    "PR-05": {
+      "task": "T013",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/platform/test/process.test.ts",
+      "runner": "vitest"
+    },
+    "PR-06": {
+      "task": "T013",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/platform/test/process.test.ts",
+      "runner": "vitest"
+    },
+    "PR-07": {
+      "task": "T013",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/platform/test/process.test.ts",
+      "runner": "vitest"
+    },
+    "PR-08": {
+      "task": "T013",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/platform/test/process.test.ts",
+      "runner": "vitest"
+    },
+    "CF-01": {
+      "task": "T014",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/config.test.ts",
+      "runner": "vitest"
+    },
+    "CF-02": {
+      "task": "T014",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/config.test.ts",
+      "runner": "vitest"
+    },
+    "CF-03": {
+      "task": "T014",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/config.test.ts",
+      "runner": "vitest"
+    },
+    "CF-04": {
+      "task": "T014",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/config.test.ts",
+      "runner": "vitest"
+    },
+    "CF-05": {
+      "task": "T014",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/config.test.ts",
+      "runner": "vitest"
+    },
+    "CF-06": {
+      "task": "T014",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/config.test.ts",
+      "runner": "vitest"
+    },
+    "CF-07": {
+      "task": "T014",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/config.test.ts",
+      "runner": "vitest"
+    },
+    "CF-08": {
+      "task": "T014",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/config.test.ts",
+      "runner": "vitest"
+    },
+    "CF-09": {
+      "task": "T014",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/config.test.ts",
+      "runner": "vitest"
+    },
+    "CF-10": {
+      "task": "T014",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/config.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-01": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-02": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-03": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-04": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-05": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-06": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-07": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-08": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-09": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-10": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-11": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-12": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-13": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-14": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "SEC-15": {
+      "task": "T015",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/security.test.ts",
+      "runner": "vitest"
+    },
+    "PS-01": {
+      "task": "T016",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/persistence.test.ts",
+      "runner": "vitest"
+    },
+    "PS-02": {
+      "task": "T016",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/persistence.test.ts",
+      "runner": "vitest"
+    },
+    "PS-03": {
+      "task": "T016",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/persistence.test.ts",
+      "runner": "vitest"
+    },
+    "HK-01": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "HK-02": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "HK-03": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "HK-04": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "HK-05": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "HK-06": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "HK-07": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "HK-08": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "HK-09": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "HK-10": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "HK-11": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/hook.test.ts",
+      "runner": "vitest"
+    },
+    "CX-01": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/codex.test.ts",
+      "runner": "vitest"
+    },
+    "CX-02": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/codex.test.ts",
+      "runner": "vitest"
+    },
+    "CX-03": {
+      "task": "T020",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/hook/test/codex.test.ts",
+      "runner": "vitest"
+    },
+    "CX-04": {
+      "task": "T072",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/hook/test/codex.test.ts",
+      "runner": "vitest"
+    },
+    "SS-01": {
+      "task": "T021",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/sessions.test.ts",
+      "runner": "vitest"
+    },
+    "SS-02": {
+      "task": "T021",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/sessions.test.ts",
+      "runner": "vitest"
+    },
+    "SS-03": {
+      "task": "T021",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/sessions.test.ts",
+      "runner": "vitest"
+    },
+    "SS-04": {
+      "task": "T021",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/sessions.test.ts",
+      "runner": "vitest"
+    },
+    "SS-05": {
+      "task": "T021",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/sessions.test.ts",
+      "runner": "vitest"
+    },
+    "SS-06": {
+      "task": "T021",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/sessions.test.ts",
+      "runner": "vitest"
+    },
+    "SS-07": {
+      "task": "T021",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/sessions.test.ts",
+      "runner": "vitest"
+    },
+    "SS-08": {
+      "task": "T021",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/sessions.test.ts",
+      "runner": "vitest"
+    },
+    "SS-09": {
+      "task": "T021",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/sessions.test.ts",
+      "runner": "vitest"
+    },
+    "SS-10": {
+      "task": "T021",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/sessions.test.ts",
+      "runner": "vitest"
+    },
+    "BR-01": {
+      "task": "T022",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/bridge.test.ts",
+      "runner": "vitest"
+    },
+    "BR-02": {
+      "task": "T022",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/bridge.test.ts",
+      "runner": "vitest"
+    },
+    "BR-03": {
+      "task": "T022",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/bridge.test.ts",
+      "runner": "vitest"
+    },
+    "BR-04": {
+      "task": "T022",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/bridge.test.ts",
+      "runner": "vitest"
+    },
+    "BR-05": {
+      "task": "T022",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/bridge.test.ts",
+      "runner": "vitest"
+    },
+    "BR-06": {
+      "task": "T022",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/bridge.test.ts",
+      "runner": "vitest"
+    },
+    "BR-07": {
+      "task": "T022",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/bridge.test.ts",
+      "runner": "vitest"
+    },
+    "BR-08": {
+      "task": "T022",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/bridge.test.ts",
+      "runner": "vitest"
+    },
+    "NT-01": {
+      "task": "T023",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/notifier.test.ts",
+      "runner": "vitest"
+    },
+    "NT-02": {
+      "task": "T023",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/notifier.test.ts",
+      "runner": "vitest"
+    },
+    "NT-03": {
+      "task": "T023",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/notifier.test.ts",
+      "runner": "vitest"
+    },
+    "NT-04": {
+      "task": "T023",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/notifier.test.ts",
+      "runner": "vitest"
+    },
+    "NT-05": {
+      "task": "T023",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/notifier.test.ts",
+      "runner": "vitest"
+    },
+    "NT-06": {
+      "task": "T023",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/notifier.test.ts",
+      "runner": "vitest"
+    },
+    "NT-07": {
+      "task": "T023",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/notifier.test.ts",
+      "runner": "vitest"
+    },
+    "NT-08": {
+      "task": "T023",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/notifier.test.ts",
+      "runner": "vitest"
+    },
+    "FO-01": {
+      "task": "T024",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/focus.test.ts",
+      "runner": "vitest"
+    },
+    "FO-02": {
+      "task": "T024",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/focus.test.ts",
+      "runner": "vitest"
+    },
+    "FO-03": {
+      "task": "T024",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/focus.test.ts",
+      "runner": "vitest"
+    },
+    "FO-04": {
+      "task": "T024",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/focus.test.ts",
+      "runner": "vitest"
+    },
+    "FO-05": {
+      "task": "T024",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/focus.test.ts",
+      "runner": "vitest"
+    },
+    "FO-06": {
+      "task": "T024",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/focus.test.ts",
+      "runner": "vitest"
+    },
+    "FO-07": {
+      "task": "T024",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/focus.test.ts",
+      "runner": "vitest"
+    },
+    "FO-08": {
+      "task": "T024",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/focus.test.ts",
+      "runner": "vitest"
+    },
+    "FO-09": {
+      "task": "T024",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/focus.test.ts",
+      "runner": "vitest"
+    },
+    "FO-10": {
+      "task": "T024",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/focus.test.ts",
+      "runner": "vitest"
+    },
+    "LV-01": {
+      "task": "T025",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/liveness.test.ts",
+      "runner": "vitest"
+    },
+    "LV-02": {
+      "task": "T025",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/liveness.test.ts",
+      "runner": "vitest"
+    },
+    "LV-03": {
+      "task": "T025",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/liveness.test.ts",
+      "runner": "vitest"
+    },
+    "LV-04": {
+      "task": "T025",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/liveness.test.ts",
+      "runner": "vitest"
+    },
+    "GI-01": {
+      "task": "T025",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/git.test.ts",
+      "runner": "vitest"
+    },
+    "GI-02": {
+      "task": "T025",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/git.test.ts",
+      "runner": "vitest"
+    },
+    "GI-03": {
+      "task": "T025",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/git.test.ts",
+      "runner": "vitest"
+    },
+    "API-01": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-02": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-03": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-04": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-05": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-06": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-07": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-08": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-09": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-10": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-11": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-12": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "API-13": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/api.test.ts",
+      "runner": "vitest"
+    },
+    "WS-01": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/ws.test.ts",
+      "runner": "vitest"
+    },
+    "WS-02": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/ws.test.ts",
+      "runner": "vitest"
+    },
+    "WS-03": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/ws.test.ts",
+      "runner": "vitest"
+    },
+    "WS-04": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/ws.test.ts",
+      "runner": "vitest"
+    },
+    "WS-05": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/ws.test.ts",
+      "runner": "vitest"
+    },
+    "WS-06": {
+      "task": "T026",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/ws.test.ts",
+      "runner": "vitest"
+    },
+    "IT-01": {
+      "task": "T027",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/integration/daemon.test.ts",
+      "runner": "vitest"
+    },
+    "IT-02": {
+      "task": "T027",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/integration/daemon.test.ts",
+      "runner": "vitest"
+    },
+    "IT-03": {
+      "task": "T027",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/integration/daemon.test.ts",
+      "runner": "vitest"
+    },
+    "IT-04": {
+      "task": "T027",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/integration/daemon.test.ts",
+      "runner": "vitest"
+    },
+    "IT-05": {
+      "task": "T027",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/integration/daemon.test.ts",
+      "runner": "vitest"
+    },
+    "IT-06": {
+      "task": "T027",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/integration/daemon.test.ts",
+      "runner": "vitest"
+    },
+    "PS-04": {
+      "task": "T027",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/integration/persistence.test.ts",
+      "runner": "vitest"
+    },
+    "PS-05": {
+      "task": "T027",
+      "milestone": "m1",
+      "os": "any",
+      "file": "packages/daemon/test/integration/persistence.test.ts",
+      "runner": "vitest"
+    },
+    "BG-01": {
+      "task": "T027",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/budget.test.ts",
+      "runner": "vitest"
+    },
+    "UB-01": {
+      "task": "T030",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/shell.test.tsx",
+      "runner": "vitest"
+    },
+    "UB-02": {
+      "task": "T030",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/shell.test.tsx",
+      "runner": "vitest"
+    },
+    "UB-03": {
+      "task": "T030",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/shell.test.tsx",
+      "runner": "vitest"
+    },
+    "UB-04": {
+      "task": "T030",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/shell.test.tsx",
+      "runner": "vitest"
+    },
+    "UB-05": {
+      "task": "T030",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/shell.test.tsx",
+      "runner": "vitest"
+    },
+    "UB-06": {
+      "task": "T030",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/shell.test.tsx",
+      "runner": "vitest"
+    },
+    "UB-07": {
+      "task": "T030",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/shell.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-01": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-02": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-03": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-04": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-05": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-06": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-07": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-08": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-09": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-10": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-11": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "UC-12": {
+      "task": "T031",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/card.test.tsx",
+      "runner": "vitest"
+    },
+    "US-01": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "US-02": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "US-03": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "US-04": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "US-05": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "US-06": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "US-07": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "US-08": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "US-09": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "US-10": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "US-11": {
+      "task": "T032",
+      "milestone": "m2",
+      "os": "any",
+      "file": "packages/ui/test/store.test.tsx",
+      "runner": "vitest"
+    },
+    "GP-01": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/golden-path.spec.ts",
+      "runner": "playwright"
+    },
+    "GP-02": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/golden-path.spec.ts",
+      "runner": "playwright"
+    },
+    "GP-03": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/golden-path.spec.ts",
+      "runner": "playwright"
+    },
+    "GP-04": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/golden-path.spec.ts",
+      "runner": "playwright"
+    },
+    "GP-05": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/golden-path.spec.ts",
+      "runner": "playwright"
+    },
+    "GP-06": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/golden-path.spec.ts",
+      "runner": "playwright"
+    },
+    "GP-07": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/golden-path.spec.ts",
+      "runner": "playwright"
+    },
+    "GP-08": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/golden-path.spec.ts",
+      "runner": "playwright"
+    },
+    "CARD-01": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/card.spec.ts",
+      "runner": "playwright"
+    },
+    "CARD-02": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/card.spec.ts",
+      "runner": "playwright"
+    },
+    "CARD-03": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/card.spec.ts",
+      "runner": "playwright"
+    },
+    "CARD-04": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/card.spec.ts",
+      "runner": "playwright"
+    },
+    "DS-01": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "DS-02": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "DS-03": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "DS-04": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "DS-05": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "DS-06": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "DS-07": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "DS-08": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "DS-09": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "DS-10": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "AX-01": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/a11y.spec.ts",
+      "runner": "playwright"
+    },
+    "AX-02": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/a11y.spec.ts",
+      "runner": "playwright"
+    },
+    "AX-03": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/a11y.spec.ts",
+      "runner": "playwright"
+    },
+    "AX-04": {
+      "task": "T033",
+      "milestone": "m2",
+      "os": "any",
+      "file": "e2e/a11y.spec.ts",
+      "runner": "playwright"
+    },
+    "WU-01": {
+      "task": "T040",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-discover.test.ts",
+      "runner": "vitest"
+    },
+    "WU-02": {
+      "task": "T040",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-discover.test.ts",
+      "runner": "vitest"
+    },
+    "WU-03": {
+      "task": "T040",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-discover.test.ts",
+      "runner": "vitest"
+    },
+    "WU-04": {
+      "task": "T040",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-discover.test.ts",
+      "runner": "vitest"
+    },
+    "WU-05": {
+      "task": "T040",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-discover.test.ts",
+      "runner": "vitest"
+    },
+    "WU-06": {
+      "task": "T040",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-discover.test.ts",
+      "runner": "vitest"
+    },
+    "WO-01": {
+      "task": "T040",
+      "milestone": "m3",
+      "os": "windows",
+      "file": "packages/platform/test/os/windows-discover.os.test.ts",
+      "runner": "vitest"
+    },
+    "WO-05": {
+      "task": "T040",
+      "milestone": "m3",
+      "os": "windows",
+      "file": "packages/platform/test/os/windows-discover.os.test.ts",
+      "runner": "vitest"
+    },
+    "WO-08": {
+      "task": "T040",
+      "milestone": "m3",
+      "os": "windows",
+      "file": "packages/platform/test/os/windows-discover.os.test.ts",
+      "runner": "vitest"
+    },
+    "WU-07": {
+      "task": "T041",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-focus.test.ts",
+      "runner": "vitest"
+    },
+    "WU-08": {
+      "task": "T041",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-focus.test.ts",
+      "runner": "vitest"
+    },
+    "WU-09": {
+      "task": "T041",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-focus.test.ts",
+      "runner": "vitest"
+    },
+    "WU-10": {
+      "task": "T041",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-focus.test.ts",
+      "runner": "vitest"
+    },
+    "WU-11": {
+      "task": "T041",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-focus.test.ts",
+      "runner": "vitest"
+    },
+    "WU-12": {
+      "task": "T041",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-focus.test.ts",
+      "runner": "vitest"
+    },
+    "WO-02": {
+      "task": "T041",
+      "milestone": "m3",
+      "os": "windows",
+      "file": "packages/platform/test/os/windows-focus.os.test.ts",
+      "runner": "vitest"
+    },
+    "WO-03": {
+      "task": "T041",
+      "milestone": "m3",
+      "os": "windows",
+      "file": "packages/platform/test/os/windows-focus.os.test.ts",
+      "runner": "vitest"
+    },
+    "WO-04": {
+      "task": "T041",
+      "milestone": "m3",
+      "os": "windows",
+      "file": "packages/platform/test/os/windows-focus.os.test.ts",
+      "runner": "vitest"
+    },
+    "WO-07": {
+      "task": "T041",
+      "milestone": "m3",
+      "os": "windows",
+      "file": "packages/platform/test/os/windows-focus.os.test.ts",
+      "runner": "vitest"
+    },
+    "WU-13": {
+      "task": "T042",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-notify.test.ts",
+      "runner": "vitest"
+    },
+    "WU-14": {
+      "task": "T042",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-notify.test.ts",
+      "runner": "vitest"
+    },
+    "WU-15": {
+      "task": "T042",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-notify.test.ts",
+      "runner": "vitest"
+    },
+    "WU-16": {
+      "task": "T042",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-notify.test.ts",
+      "runner": "vitest"
+    },
+    "WU-17": {
+      "task": "T042",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-notify.test.ts",
+      "runner": "vitest"
+    },
+    "WU-18": {
+      "task": "T042",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/windows-notify.test.ts",
+      "runner": "vitest"
+    },
+    "WO-06": {
+      "task": "T042",
+      "milestone": "m3",
+      "os": "windows",
+      "file": "packages/platform/test/os/windows-notify.os.test.ts",
+      "runner": "vitest"
+    },
+    "MU-01": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-focus.test.ts",
+      "runner": "vitest"
+    },
+    "MU-02": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-focus.test.ts",
+      "runner": "vitest"
+    },
+    "MU-03": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-focus.test.ts",
+      "runner": "vitest"
+    },
+    "MU-04": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-focus.test.ts",
+      "runner": "vitest"
+    },
+    "MU-05": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-focus.test.ts",
+      "runner": "vitest"
+    },
+    "MU-06": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-focus.test.ts",
+      "runner": "vitest"
+    },
+    "MU-07": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-focus.test.ts",
+      "runner": "vitest"
+    },
+    "MU-08": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-focus.test.ts",
+      "runner": "vitest"
+    },
+    "MO-01": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "macos",
+      "file": "packages/platform/test/os/macos-focus.os.test.ts",
+      "runner": "vitest"
+    },
+    "MO-02": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "macos",
+      "file": "packages/platform/test/os/macos-focus.os.test.ts",
+      "runner": "vitest"
+    },
+    "MO-03": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "macos",
+      "file": "packages/platform/test/os/macos-focus.os.test.ts",
+      "runner": "vitest"
+    },
+    "MO-04": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "macos",
+      "file": "packages/platform/test/os/macos-focus.os.test.ts",
+      "runner": "vitest"
+    },
+    "MO-06": {
+      "task": "T043",
+      "milestone": "m3",
+      "os": "macos",
+      "file": "packages/platform/test/os/macos-focus.os.test.ts",
+      "runner": "vitest"
+    },
+    "MU-09": {
+      "task": "T044",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-notify.test.ts",
+      "runner": "vitest"
+    },
+    "MU-10": {
+      "task": "T044",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-notify.test.ts",
+      "runner": "vitest"
+    },
+    "MU-11": {
+      "task": "T044",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-notify.test.ts",
+      "runner": "vitest"
+    },
+    "MU-12": {
+      "task": "T044",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/macos-notify.test.ts",
+      "runner": "vitest"
+    },
+    "MO-05": {
+      "task": "T044",
+      "milestone": "m3",
+      "os": "macos",
+      "file": "packages/platform/test/os/macos-notify.os.test.ts",
+      "runner": "vitest"
+    },
+    "LU-01": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-backends.test.ts",
+      "runner": "vitest"
+    },
+    "LU-02": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-backends.test.ts",
+      "runner": "vitest"
+    },
+    "LU-03": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-backends.test.ts",
+      "runner": "vitest"
+    },
+    "LU-04": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-backends.test.ts",
+      "runner": "vitest"
+    },
+    "LU-05": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-backends.test.ts",
+      "runner": "vitest"
+    },
+    "LU-06": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-backends.test.ts",
+      "runner": "vitest"
+    },
+    "LU-07": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-backends.test.ts",
+      "runner": "vitest"
+    },
+    "LU-08": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-backends.test.ts",
+      "runner": "vitest"
+    },
+    "LU-09": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-backends.test.ts",
+      "runner": "vitest"
+    },
+    "LU-10": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-backends.test.ts",
+      "runner": "vitest"
+    },
+    "LO-01": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "linux",
+      "file": "packages/platform/test/os/linux-x11.os.test.ts",
+      "runner": "vitest"
+    },
+    "LO-02": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "linux",
+      "file": "packages/platform/test/os/linux-x11.os.test.ts",
+      "runner": "vitest"
+    },
+    "LO-03": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "linux",
+      "file": "packages/platform/test/os/linux-x11.os.test.ts",
+      "runner": "vitest"
+    },
+    "LO-04": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "linux",
+      "file": "packages/platform/test/os/linux-x11.os.test.ts",
+      "runner": "vitest"
+    },
+    "LO-06": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "linux",
+      "file": "packages/platform/test/os/linux-x11.os.test.ts",
+      "runner": "vitest"
+    },
+    "LO-07": {
+      "task": "T045",
+      "milestone": "m3",
+      "os": "linux",
+      "file": "packages/platform/test/os/linux-x11.os.test.ts",
+      "runner": "vitest"
+    },
+    "LU-11": {
+      "task": "T046",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-notify.test.ts",
+      "runner": "vitest"
+    },
+    "LU-12": {
+      "task": "T046",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-notify.test.ts",
+      "runner": "vitest"
+    },
+    "LU-13": {
+      "task": "T046",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-notify.test.ts",
+      "runner": "vitest"
+    },
+    "LU-14": {
+      "task": "T046",
+      "milestone": "m3",
+      "os": "any",
+      "file": "packages/platform/test/linux-notify.test.ts",
+      "runner": "vitest"
+    },
+    "LO-05": {
+      "task": "T046",
+      "milestone": "m3",
+      "os": "linux",
+      "file": "packages/platform/test/os/linux-notify.os.test.ts",
+      "runner": "vitest"
+    },
+    "CLI-01": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/cli.test.ts",
+      "runner": "vitest"
+    },
+    "CLI-02": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/cli.test.ts",
+      "runner": "vitest"
+    },
+    "CLI-03": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/cli.test.ts",
+      "runner": "vitest"
+    },
+    "CLI-04": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/cli.test.ts",
+      "runner": "vitest"
+    },
+    "CLI-05": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/cli.test.ts",
+      "runner": "vitest"
+    },
+    "CLI-06": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/cli.test.ts",
+      "runner": "vitest"
+    },
+    "CLI-07": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/cli.test.ts",
+      "runner": "vitest"
+    },
+    "CLI-08": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/cli.test.ts",
+      "runner": "vitest"
+    },
+    "CLI-09": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/cli.test.ts",
+      "runner": "vitest"
+    },
+    "CLI-10": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/cli.test.ts",
+      "runner": "vitest"
+    },
+    "DR-01": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/doctor.test.ts",
+      "runner": "vitest"
+    },
+    "DR-02": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/doctor.test.ts",
+      "runner": "vitest"
+    },
+    "DR-03": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/doctor.test.ts",
+      "runner": "vitest"
+    },
+    "DR-04": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/doctor.test.ts",
+      "runner": "vitest"
+    },
+    "DR-05": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/doctor.test.ts",
+      "runner": "vitest"
+    },
+    "DR-06": {
+      "task": "T050",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/doctor.test.ts",
+      "runner": "vitest"
+    },
+    "IC-01": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-claude.test.ts",
+      "runner": "vitest"
+    },
+    "IC-02": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-claude.test.ts",
+      "runner": "vitest"
+    },
+    "IC-03": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-claude.test.ts",
+      "runner": "vitest"
+    },
+    "IC-04": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-claude.test.ts",
+      "runner": "vitest"
+    },
+    "IC-05": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-claude.test.ts",
+      "runner": "vitest"
+    },
+    "IC-06": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-claude.test.ts",
+      "runner": "vitest"
+    },
+    "IC-07": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-claude.test.ts",
+      "runner": "vitest"
+    },
+    "IC-08": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-claude.test.ts",
+      "runner": "vitest"
+    },
+    "IX-01": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-other.test.ts",
+      "runner": "vitest"
+    },
+    "IX-02": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-other.test.ts",
+      "runner": "vitest"
+    },
+    "IX-03": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-other.test.ts",
+      "runner": "vitest"
+    },
+    "IX-04": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-other.test.ts",
+      "runner": "vitest"
+    },
+    "IX-05": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-other.test.ts",
+      "runner": "vitest"
+    },
+    "IX-06": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-other.test.ts",
+      "runner": "vitest"
+    },
+    "IX-07": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-other.test.ts",
+      "runner": "vitest"
+    },
+    "IX-08": {
+      "task": "T051",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-other.test.ts",
+      "runner": "vitest"
+    },
+    "VB-01": {
+      "task": "T052",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/vscode-bridge/test/extension.test.ts",
+      "runner": "vitest"
+    },
+    "VB-02": {
+      "task": "T052",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/vscode-bridge/test/extension.test.ts",
+      "runner": "vitest"
+    },
+    "VB-03": {
+      "task": "T052",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/vscode-bridge/test/extension.test.ts",
+      "runner": "vitest"
+    },
+    "VB-04": {
+      "task": "T052",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/vscode-bridge/test/extension.test.ts",
+      "runner": "vitest"
+    },
+    "VB-05": {
+      "task": "T052",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/vscode-bridge/test/extension.test.ts",
+      "runner": "vitest"
+    },
+    "VB-06": {
+      "task": "T052",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/vscode-bridge/test/extension.test.ts",
+      "runner": "vitest"
+    },
+    "VB-07": {
+      "task": "T052",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/vscode-bridge/test/extension.test.ts",
+      "runner": "vitest"
+    },
+    "VB-08": {
+      "task": "T052",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/vscode-bridge/test/extension.test.ts",
+      "runner": "vitest"
+    },
+    "SH-01": {
+      "task": "T053",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/shell-integration.test.ts",
+      "runner": "vitest"
+    },
+    "SH-02": {
+      "task": "T053",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/shell-integration.test.ts",
+      "runner": "vitest"
+    },
+    "SH-03": {
+      "task": "T053",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/shell-integration.test.ts",
+      "runner": "vitest"
+    },
+    "SH-04": {
+      "task": "T053",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/shell-integration.test.ts",
+      "runner": "vitest"
+    },
+    "SH-05": {
+      "task": "T053",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/shell-integration.test.ts",
+      "runner": "vitest"
+    },
+    "SYS-01": {
+      "task": "T054",
+      "milestone": "m4",
+      "os": "any",
+      "file": "e2e/system.spec.ts",
+      "runner": "playwright"
+    },
+    "SYS-02": {
+      "task": "T054",
+      "milestone": "m4",
+      "os": "any",
+      "file": "e2e/system.spec.ts",
+      "runner": "playwright"
+    },
+    "SYS-03": {
+      "task": "T054",
+      "milestone": "m4",
+      "os": "any",
+      "file": "e2e/system.spec.ts",
+      "runner": "playwright"
+    },
+    "SYS-04": {
+      "task": "T054",
+      "milestone": "m4",
+      "os": "any",
+      "file": "e2e/system.spec.ts",
+      "runner": "playwright"
+    },
+    "SYS-05": {
+      "task": "T054",
+      "milestone": "m4",
+      "os": "any",
+      "file": "e2e/system.spec.ts",
+      "runner": "playwright"
+    },
+    "SYS-06": {
+      "task": "T054",
+      "milestone": "m4",
+      "os": "any",
+      "file": "e2e/system.spec.ts",
+      "runner": "playwright"
+    },
+    "CP-01": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/hook/test/copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-02": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/hook/test/copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-03": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/hook/test/copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-04": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/hook/test/copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-05": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/hook/test/copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-06": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/hook/test/copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-07": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/core/test/copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-08": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/core/test/copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-09": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/core/test/copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-10": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-11": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-12": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-13": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-copilot.test.ts",
+      "runner": "vitest"
+    },
+    "CP-14": {
+      "task": "T070",
+      "milestone": "m4",
+      "os": "any",
+      "file": "packages/cli/test/install-copilot.test.ts",
+      "runner": "vitest"
+    },
+    "VR-01": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-02": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-03": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-04": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-05": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-06": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-07": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-08": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-09": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-10": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-11": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/version-build.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-12": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-13": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/version-build.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-14": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/version-build.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-15": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "VR-16": {
+      "task": "T080",
+      "milestone": "m5",
+      "os": "any",
+      "file": "scripts/test/version.test.mjs",
+      "runner": "vitest"
+    },
+    "LY-01": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-02": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-03": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-04": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-05": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-06": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-07": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-08": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-09": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-10": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-11": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "LY-12": {
+      "task": "T081",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/layout.test.ts",
+      "runner": "vitest"
+    },
+    "RW-01": {
+      "task": "T082",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/layout-wiring.test.ts",
+      "runner": "vitest"
+    },
+    "RW-02": {
+      "task": "T082",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/layout-wiring.test.ts",
+      "runner": "vitest"
+    },
+    "RW-03": {
+      "task": "T082",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/layout-wiring.test.ts",
+      "runner": "vitest"
+    },
+    "RW-04": {
+      "task": "T082",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/layout-wiring.test.ts",
+      "runner": "vitest"
+    },
+    "RW-05": {
+      "task": "T082",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/layout-wiring.test.ts",
+      "runner": "vitest"
+    },
+    "RW-06": {
+      "task": "T082",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/layout-wiring.test.ts",
+      "runner": "vitest"
+    },
+    "RW-07": {
+      "task": "T082",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/layout-wiring.test.ts",
+      "runner": "vitest"
+    },
+    "RW-08": {
+      "task": "T082",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/layout-wiring.test.ts",
+      "runner": "vitest"
+    },
+    "RW-09": {
+      "task": "T082",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/layout-wiring.test.ts",
+      "runner": "vitest"
+    },
+    "LN-01": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-02": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-03": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-04": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-05": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-06": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-07": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-08": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-09": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-10": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-11": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-12": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "LN-13": {
+      "task": "T083",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-launcher.test.ts",
+      "runner": "vitest"
+    },
+    "RP-01": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-02": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-03": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-04": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-05": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-06": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-07": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-08": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-09": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-10": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-11": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-12": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-13": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "RP-14": {
+      "task": "T084",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-repair.test.ts",
+      "runner": "vitest"
+    },
+    "PC-01": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-02": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-03": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-04": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-05": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-06": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-07": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-08": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-09": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-10": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-11": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-12": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "PC-13": {
+      "task": "T085",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "VX-01": {
+      "task": "T086",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-vscode-package.test.ts",
+      "runner": "vitest"
+    },
+    "VX-02": {
+      "task": "T086",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-vscode-package.test.ts",
+      "runner": "vitest"
+    },
+    "VX-03": {
+      "task": "T086",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-vscode-package.test.ts",
+      "runner": "vitest"
+    },
+    "VX-04": {
+      "task": "T086",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-vscode-package.test.ts",
+      "runner": "vitest"
+    },
+    "VX-05": {
+      "task": "T086",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-vscode-package.test.ts",
+      "runner": "vitest"
+    },
+    "VX-06": {
+      "task": "T086",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-vscode-package.test.ts",
+      "runner": "vitest"
+    },
+    "VX-07": {
+      "task": "T086",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-vscode-package.test.ts",
+      "runner": "vitest"
+    },
+    "VX-08": {
+      "task": "T086",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-vscode-package.test.ts",
+      "runner": "vitest"
+    },
+    "PK-01": {
+      "task": "T087",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/package.test.mjs",
+      "runner": "vitest"
+    },
+    "PK-02": {
+      "task": "T087",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/package.test.mjs",
+      "runner": "vitest"
+    },
+    "PK-03": {
+      "task": "T087",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/package.test.mjs",
+      "runner": "vitest"
+    },
+    "PK-04": {
+      "task": "T087",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/package.test.mjs",
+      "runner": "vitest"
+    },
+    "PK-05": {
+      "task": "T087",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/package.test.mjs",
+      "runner": "vitest"
+    },
+    "PK-06": {
+      "task": "T087",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/package.test.mjs",
+      "runner": "vitest"
+    },
+    "PK-07": {
+      "task": "T087",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/package.test.mjs",
+      "runner": "vitest"
+    },
+    "PK-08": {
+      "task": "T087",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/package.test.mjs",
+      "runner": "vitest"
+    },
+    "RN-01": {
+      "task": "T088",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/release.test.mjs",
+      "runner": "vitest"
+    },
+    "RN-02": {
+      "task": "T088",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/release.test.mjs",
+      "runner": "vitest"
+    },
+    "RN-03": {
+      "task": "T088",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/release.test.mjs",
+      "runner": "vitest"
+    },
+    "RN-04": {
+      "task": "T088",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/release.test.mjs",
+      "runner": "vitest"
+    },
+    "RN-05": {
+      "task": "T088",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/release.test.mjs",
+      "runner": "vitest"
+    },
+    "SK-01": {
+      "task": "T089",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/install.test.mjs",
+      "runner": "vitest"
+    },
+    "SK-02": {
+      "task": "T089",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/install.test.mjs",
+      "runner": "vitest"
+    },
+    "SK-03": {
+      "task": "T089",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/install.test.mjs",
+      "runner": "vitest"
+    },
+    "SK-04": {
+      "task": "T089",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/install.test.mjs",
+      "runner": "vitest"
+    },
+    "SK-05": {
+      "task": "T089",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/install.test.mjs",
+      "runner": "vitest"
+    },
+    "SK-06": {
+      "task": "T089",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/install.test.mjs",
+      "runner": "vitest"
+    },
+    "IN-01": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-02": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-03": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-04": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-05": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-06": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-07": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-08": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-09": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-10": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-11": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-12": {
+      "task": "T092",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "PK-09": {
+      "task": "T093",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/package.test.mjs",
+      "runner": "vitest"
+    },
+    "LK-01": {
+      "task": "T094",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/package-cli.test.ts",
+      "runner": "vitest"
+    },
+    "LK-02": {
+      "task": "T094",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "PK-10": {
+      "task": "T096",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/package.test.mjs",
+      "runner": "vitest"
+    },
+    "SK-07": {
+      "task": "T096",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/install.test.mjs",
+      "runner": "vitest"
+    },
+    "IN-13": {
+      "task": "T097",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "IN-14": {
+      "task": "T098",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/init-launch.test.ts",
+      "runner": "vitest"
+    },
+    "RR-01": {
+      "task": "T101",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/install-run.test.ts",
+      "runner": "vitest"
+    },
+    "EL-01": {
+      "task": "T102",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/fix-text.test.tsx",
+      "runner": "vitest"
+    },
+    "EL-02": {
+      "task": "T102",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/windows-discover.test.ts",
+      "runner": "vitest"
+    },
+    "CL-17": {
+      "task": "T103",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/classify.test.ts",
+      "runner": "vitest"
+    },
+    "DR-07": {
+      "task": "T103",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/doctor.test.ts",
+      "runner": "vitest"
+    },
+    "TV-01": {
+      "task": "T105",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/terrain-fit.test.tsx",
+      "runner": "vitest"
+    },
+    "TV-02": {
+      "task": "T105",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/terrain-fit.test.tsx",
+      "runner": "vitest"
+    },
+    "TV-03": {
+      "task": "T105",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/terrain-fit.test.tsx",
+      "runner": "vitest"
+    },
+    "TV-04": {
+      "task": "T106",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/terrain-fit.test.tsx",
+      "runner": "vitest"
+    },
+    "TV-05": {
+      "task": "T106",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/terrain-fit.test.tsx",
+      "runner": "vitest"
+    },
+    "WU-19": {
+      "task": "T109",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/windows-focus.test.ts",
+      "runner": "vitest"
+    },
+    "WU-20": {
+      "task": "T109",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/platform/test/windows-focus.test.ts",
+      "runner": "vitest"
+    },
+    "TR-01": {
+      "task": "T100",
+      "milestone": "m5",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "TR-02": {
+      "task": "T100",
+      "milestone": "m5",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "TR-03": {
+      "task": "T100",
+      "milestone": "m5",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "TR-04": {
+      "task": "T100",
+      "milestone": "m5",
+      "os": "any",
+      "file": "e2e/design.spec.ts",
+      "runner": "playwright"
+    },
+    "TL-01": {
+      "task": "T112",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-02": {
+      "task": "T112",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-03": {
+      "task": "T112",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-04": {
+      "task": "T112",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-05": {
+      "task": "T112",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-06": {
+      "task": "T112",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-07": {
+      "task": "T112",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-08": {
+      "task": "T112",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-09": {
+      "task": "T112",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TD-01": {
+      "task": "T113",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TD-02": {
+      "task": "T113",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TD-03": {
+      "task": "T113",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TD-04": {
+      "task": "T113",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TD-05": {
+      "task": "T113",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TA-01": {
+      "task": "T114",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/copilot-account.test.ts",
+      "runner": "vitest"
+    },
+    "TA-02": {
+      "task": "T114",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/copilot-account.test.ts",
+      "runner": "vitest"
+    },
+    "TA-03": {
+      "task": "T114",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/copilot-account.test.ts",
+      "runner": "vitest"
+    },
+    "TA-04": {
+      "task": "T114",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/copilot-account.test.ts",
+      "runner": "vitest"
+    },
+    "TA-05": {
+      "task": "T114",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/copilot-account.test.ts",
+      "runner": "vitest"
+    },
+    "DC-01": {
+      "task": "T115",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/doctor-copilot.test.ts",
+      "runner": "vitest"
+    },
+    "DC-02": {
+      "task": "T115",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/doctor-copilot.test.ts",
+      "runner": "vitest"
+    },
+    "DC-03": {
+      "task": "T115",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/doctor-copilot.test.ts",
+      "runner": "vitest"
+    },
+    "DC-04": {
+      "task": "T115",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/doctor-copilot.test.ts",
+      "runner": "vitest"
+    },
+    "DC-05": {
+      "task": "T115",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/doctor-copilot.test.ts",
+      "runner": "vitest"
+    },
+    "SH-06": {
+      "task": "T116",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/shell-integration.test.ts",
+      "runner": "vitest"
+    },
+    "SH-07": {
+      "task": "T116",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/shell-integration.test.ts",
+      "runner": "vitest"
+    },
+    "TT-01": {
+      "task": "T117",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/traces.test.ts",
+      "runner": "vitest"
+    },
+    "TT-02": {
+      "task": "T117",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/traces.test.ts",
+      "runner": "vitest"
+    },
+    "TT-03": {
+      "task": "T117",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/traces.test.ts",
+      "runner": "vitest"
+    },
+    "TT-04": {
+      "task": "T117",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/traces.test.ts",
+      "runner": "vitest"
+    },
+    "TT-05": {
+      "task": "T117",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/traces.test.ts",
+      "runner": "vitest"
+    },
+    "TT-06": {
+      "task": "T117",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/traces.test.ts",
+      "runner": "vitest"
+    },
+    "UR-01": {
+      "task": "T119",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-format.test.tsx",
+      "runner": "vitest"
+    },
+    "UR-02": {
+      "task": "T119",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-format.test.tsx",
+      "runner": "vitest"
+    },
+    "UR-03": {
+      "task": "T119",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-format.test.tsx",
+      "runner": "vitest"
+    },
+    "UR-04": {
+      "task": "T119",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-format.test.tsx",
+      "runner": "vitest"
+    },
+    "UR-05": {
+      "task": "T119",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-format.test.tsx",
+      "runner": "vitest"
+    },
+    "UR-06": {
+      "task": "T119",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-format.test.tsx",
+      "runner": "vitest"
+    },
+    "LS-01": {
+      "task": "T120",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/list-tele.test.tsx",
+      "runner": "vitest"
+    },
+    "LS-02": {
+      "task": "T120",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/list-tele.test.tsx",
+      "runner": "vitest"
+    },
+    "LS-03": {
+      "task": "T120",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/list-tele.test.tsx",
+      "runner": "vitest"
+    },
+    "LS-04": {
+      "task": "T120",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/list-tele.test.tsx",
+      "runner": "vitest"
+    },
+    "SD-01": {
+      "task": "T121",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/session-view.test.tsx",
+      "runner": "vitest"
+    },
+    "SD-02": {
+      "task": "T121",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/session-view.test.tsx",
+      "runner": "vitest"
+    },
+    "SD-03": {
+      "task": "T121",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/session-view.test.tsx",
+      "runner": "vitest"
+    },
+    "SD-04": {
+      "task": "T121",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/session-view.test.tsx",
+      "runner": "vitest"
+    },
+    "SD-05": {
+      "task": "T121",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/session-view.test.tsx",
+      "runner": "vitest"
+    },
+    "SD-06": {
+      "task": "T121",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/session-view.test.tsx",
+      "runner": "vitest"
+    },
+    "RT-01": {
+      "task": "T122",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/trace-layout.test.tsx",
+      "runner": "vitest"
+    },
+    "RT-02": {
+      "task": "T122",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/trace-layout.test.tsx",
+      "runner": "vitest"
+    },
+    "RT-03": {
+      "task": "T122",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/run-trace.test.tsx",
+      "runner": "vitest"
+    },
+    "RT-04": {
+      "task": "T122",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/run-trace.test.tsx",
+      "runner": "vitest"
+    },
+    "RT-05": {
+      "task": "T122",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/run-trace.test.tsx",
+      "runner": "vitest"
+    },
+    "RO-01": {
+      "task": "T123",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/routes.test.tsx",
+      "runner": "vitest"
+    },
+    "RO-02": {
+      "task": "T123",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/routes.test.tsx",
+      "runner": "vitest"
+    },
+    "RO-03": {
+      "task": "T123",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/routes.test.tsx",
+      "runner": "vitest"
+    },
+    "RO-04": {
+      "task": "T123",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/routes.test.tsx",
+      "runner": "vitest"
+    },
+    "RO-05": {
+      "task": "T123",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/routes.test.tsx",
+      "runner": "vitest"
+    },
+    "UA-01": {
+      "task": "T124",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/uninstall-all.test.ts",
+      "runner": "vitest"
+    },
+    "UA-02": {
+      "task": "T124",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/uninstall-all.test.ts",
+      "runner": "vitest"
+    },
+    "UA-03": {
+      "task": "T124",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/uninstall-all.test.ts",
+      "runner": "vitest"
+    },
+    "UA-04": {
+      "task": "T124",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/uninstall-all.test.ts",
+      "runner": "vitest"
+    },
+    "UA-05": {
+      "task": "T124",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/uninstall-all.test.ts",
+      "runner": "vitest"
+    },
+    "UA-06": {
+      "task": "T124",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/uninstall-all.test.ts",
+      "runner": "vitest"
+    },
+    "UA-07": {
+      "task": "T124",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/uninstall-all.test.ts",
+      "runner": "vitest"
+    },
+    "SK-08": {
+      "task": "T124",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packaging-test/install.test.mjs",
+      "runner": "vitest"
+    },
+    "UA-08": {
+      "task": "T124",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/uninstall-all.test.ts",
+      "runner": "vitest"
+    },
+    "UA-09": {
+      "task": "T124",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/cli/test/uninstall-all.test.ts",
+      "runner": "vitest"
+    },
+    "TL-10": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/claude-telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-11": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/claude-telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-12": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/claude-telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-13": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/claude-telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-14": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/claude-telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TL-15": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/core/test/claude-telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TD-06": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TD-07": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/daemon/test/telemetry.test.ts",
+      "runner": "vitest"
+    },
+    "TC-01": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-cards.test.tsx",
+      "runner": "vitest"
+    },
+    "TC-02": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-cards.test.tsx",
+      "runner": "vitest"
+    },
+    "TC-03": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-cards.test.tsx",
+      "runner": "vitest"
+    },
+    "TC-04": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-cards.test.tsx",
+      "runner": "vitest"
+    },
+    "TC-05": {
+      "task": "T125",
+      "milestone": "m5",
+      "os": "any",
+      "file": "packages/ui/test/telemetry-cards.test.tsx",
+      "runner": "vitest"
+    }
+  }
+}

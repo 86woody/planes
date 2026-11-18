@@ -1,0 +1,505 @@
+<title>Twenty Agentic Workflows</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a maintenance-manual reference. Header, legend, family filter, then a two-column grid of task cards. */
+:root {
+  --bg: #eef2f3;
+  --panel: #ffffff;
+  --ink: #17222a;
+  --muted: #56646e;
+  --line: #c8d2d6;
+  --accent: #0b6a85;
+  --accent-soft: #dcedf2;
+  --amber: #a66a10;
+  --amber-soft: #f6ead3;
+  --display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f161b; --panel: #161f26; --ink: #e2e9ed; --muted: #93a2ac; --line: #2b3943;
+    --accent: #5bb8d4; --accent-soft: #163541; --amber: #e2aa52; --amber-soft: #3a2c14;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f161b; --panel: #161f26; --ink: #e2e9ed; --muted: #93a2ac; --line: #2b3943;
+  --accent: #5bb8d4; --accent-soft: #163541; --amber: #e2aa52; --amber-soft: #3a2c14;
+  color-scheme: dark;
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.6; }
+.wrap {
+  max-width: 1180px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+  display: grid; gap: 28px;
+}
+header { display: grid; gap: 14px; max-width: 72ch; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(34px, 6vw, 54px); line-height: 1.02; margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+.lede { margin: 0; font-size: 16.5px; color: var(--ink); }
+.note { margin: 0; color: var(--muted); font-size: 14px; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.stats b { color: var(--ink); font-weight: 500; }
+
+.toolbar { display: grid; gap: 14px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-block: 14px; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.row-label { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); min-width: 74px; }
+.chip {
+  font: 500 13px/1 var(--body); color: var(--ink); background: transparent;
+  border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; cursor: pointer;
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--panel); border-color: var(--ink); }
+.chip:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chip .n { font-family: var(--mono); font-size: 11px; opacity: .7; margin-left: 4px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 4px; }
+.legend svg { display: block; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr)); gap: 14px; align-items: start; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; min-width: 0; }
+.card summary { list-style: none; display: flex; align-items: center; gap: 14px; padding: 12px 16px; cursor: pointer; border-radius: 6px; }
+.card summary::-webkit-details-marker { display: none; }
+.card summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ico { flex: none; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.ico svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.sum-text { flex: 1; min-width: 0; display: grid; gap: 1px; }
+.meta { display: flex; gap: 10px; align-items: baseline; }
+.chev { flex: none; width: 18px; height: 18px; fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .15s; }
+.card[open] .chev { transform: rotate(180deg); }
+.card[open] summary { border-bottom: 1px solid var(--line); border-radius: 6px 6px 0 0; }
+.body { display: grid; gap: 12px; padding: 16px 20px 16px; }
+.tools { margin-left: auto; }
+.code { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fam { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.card h2 { font-family: var(--display); font-weight: 600; font-size: 22px; line-height: 1.15; margin: 0; text-wrap: balance; }
+figure { margin: 0; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); overflow-x: auto; }
+figure svg { display: block; width: 100%; min-width: 380px; height: auto; }
+.desc { margin: 0; max-width: 68ch; }
+dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 14px; }
+dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+dd { margin: 0; min-width: 0; }
+dt.risk { color: var(--amber); }
+.ste { display: flex; align-items: flex-end; gap: 12px; border-top: 1px dashed var(--line); padding-top: 10px; }
+.bars { position: relative; display: flex; align-items: flex-end; gap: 3px; height: 26px; padding-right: 2px; }
+.bars span { width: 6px; background: var(--muted); opacity: .55; border-radius: 1px 1px 0 0; }
+.bars span.long { background: var(--amber); opacity: 1; }
+.bars i { position: absolute; left: -3px; right: -3px; border-top: 1px dashed var(--amber); }
+.ste-text { font-family: var(--mono); font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* diagram parts */
+.n-io { fill: var(--panel); stroke: var(--muted); stroke-width: 1.2; }
+.n-llm, .n-best { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.4; }
+.n-best { stroke-width: 2.6; }
+.n-tool { fill: var(--panel); stroke: var(--ink); stroke-width: 1.2; }
+.n-gate { fill: var(--amber-soft); stroke: var(--amber); stroke-width: 1.4; }
+.n-human { fill: var(--amber-soft); stroke: var(--amber); stroke-width: 1.4; }
+.n-store { fill: var(--panel); stroke: var(--muted); stroke-width: 1.2; }
+.n-pruned { fill: none; stroke: var(--muted); stroke-width: 1.1; stroke-dasharray: 3 3; }
+.t { fill: var(--ink); font-family: var(--body); font-size: 11.5px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+.t-pruned { fill: var(--muted); text-decoration: line-through; }
+.e { fill: none; stroke: var(--muted); stroke-width: 1.3; }
+.e-dash { stroke-dasharray: 4 3; }
+.ah { fill: var(--muted); }
+.el { fill: var(--muted); font-family: var(--mono); font-size: 10px; text-anchor: middle; dominant-baseline: central;
+      paint-order: stroke; stroke: var(--bg); stroke-width: 4px; stroke-linejoin: round; }
+.lg-t { fill: var(--muted); font-family: var(--body); font-size: 11.5px; dominant-baseline: central; }
+
+footer { color: var(--muted); font-size: 13px; max-width: 72ch; }
+@media (prefers-reduced-motion: no-preference) { .card { transition: border-color .15s; } .card:hover { border-color: var(--muted); } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Reference · prose in ASD-STE100</div>
+    <h1>Twenty Agentic Workflows</h1>
+    <p class="lede">This reference shows twenty patterns that connect language models, tools and people into agentic systems. Each card has a diagram, a description, a condition for use and the primary risk. Start with the simplest pattern that does the task. Add steps only when a test shows that you need them.</p>
+    <p class="note">The text follows approximately 80% of the ASD-STE100 Simplified Technical English rules. Sentences are short and active, and each sentence has one idea. Technical names, for example <em>context window</em> and <em>map-reduce</em>, are not in the STE dictionary. STE permits them as technical names. The bars under each card show the length of each sentence against the 25-word limit for descriptive text.</p>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <section class="toolbar" aria-label="Filter and legend">
+    <div class="row" id="filters"><span class="row-label">Family</span></div>
+    <div class="row"><span class="row-label">Legend</span><div class="legend" id="legend"></div></div>
+  </section>
+
+  <main class="grid" id="grid"></main>
+
+  <footer>Sources for the pattern names: the Anthropic article <em>Building effective agents</em> (2024), the ReAct paper (Yao et al., 2022), the Tree of Thoughts paper (Yao et al., 2023), and the LangGraph and OpenAI Agents SDK documentation. The STE rules come from the ASD-STE100 specification, Issue 9.</footer>
+</div>
+
+<script>
+const FAMILIES = {
+  foundation: "Foundation",
+  workflow: "Fixed workflow",
+  loop: "Agent loop",
+  multi: "Multi-agent",
+  control: "Control"
+};
+
+const W = [
+  { name: "Augmented LLM", fam: "foundation",
+    desc: "This is the base unit of all agentic systems. The model gets a request and a list of tools. The model selects a tool and writes the arguments. Your code runs the tool and sends the result back to the model. The model then writes the answer.",
+    use: "Use this pattern when one model call must read or change data outside the model.",
+    risk: "A bad tool description causes the model to select the wrong tool.",
+    d: { w: 420, h: 200, n: {
+      in: ["Input", 40, 70, "io"], llm: ["LLM", 210, 70, "llm"], out: ["Output", 380, 70, "io"],
+      tools: ["Tools", 105, 160, "tool"], ret: ["Retrieval", 210, 160, "tool"], mem: ["Memory", 315, 160, "store"] },
+      e: [["in","llm"],["llm","out"],["llm","tools",{both:1}],["llm","ret",{both:1}],["llm","mem",{both:1}]] } },
+
+  { name: "Agentic RAG", fam: "foundation",
+    desc: "The agent decides when to search and what to search for. It writes a query, gets documents and grades them for relevance. If the documents are not sufficient, it writes a new query. When the documents are sufficient, it writes an answer with citations.",
+    use: "Use this pattern when the answer is in a large document set and one search is not sufficient.",
+    risk: "Bad grades can remove the correct document or keep a wrong one.",
+    d: { w: 420, h: 200, n: {
+      q: ["Question", 45, 50, "io"], ag: ["Agent", 160, 50, "llm"], s: ["Search", 280, 50, "tool"],
+      idx: ["Index", 380, 50, "store"], g: ["Relevant?", 220, 150, "gate"], a: ["Answer", 60, 150, "io"] },
+      e: [["q","ag"],["ag","s",{l:"query"}],["s","idx",{both:1}],["s","g",{l:"docs"}],["g","ag",{l:"no",dash:1}],["g","a",{l:"yes"}]] } },
+
+  { name: "Memory-augmented agent", fam: "foundation",
+    desc: "The agent keeps two types of memory. Short-term memory is the current context. Long-term memory is a store outside the model. At the start of a task, the agent recalls the related facts. At the end, it writes new facts to the store. This lets the agent continue work across sessions.",
+    use: "Use this pattern for assistants that work with the same person or project for a long time.",
+    risk: "Old or wrong facts in the store can cause wrong answers.",
+    d: { w: 420, h: 200, n: {
+      in: ["Task", 45, 60, "io"], ag: ["Agent + context", 210, 60, "llm"], out: ["Result", 375, 60, "io"],
+      mem: ["Long-term memory", 210, 160, "store"] },
+      e: [["in","ag"],["ag","out"],["mem","ag",{bend:45,l:"recall"}],["ag","mem",{bend:45,l:"write"}]] } },
+
+  { name: "Prompt chaining", fam: "workflow",
+    desc: "The workflow divides a task into a fixed sequence of steps. Each step is one model call. Each call uses the output of the step before it. A code check between two steps can stop the chain if the output is not correct. This makes each call smaller and easier to test.",
+    use: "Use this pattern when you can divide the task into steps before the start.",
+    risk: "An error in an early step goes into all the steps after it.",
+    d: { w: 420, h: 190, n: {
+      in: ["Input", 35, 60, "io"], c1: ["Call 1", 115, 60, "llm"], g: ["Check", 205, 60, "gate"],
+      c2: ["Call 2", 295, 60, "llm"], c3: ["Call 3", 375, 60, "llm"], out: ["Output", 375, 150, "io"], stop: ["Stop", 205, 150, "io"] },
+      e: [["in","c1"],["c1","g"],["g","c2",{l:"pass"}],["c2","c3"],["c3","out"],["g","stop",{l:"fail",dash:1}]] } },
+
+  { name: "Routing", fam: "workflow",
+    desc: "A first model call reads the input and puts it in one category. Code then sends the input to the path for that category. Each path has its own prompt, tools or model. A small, fast model can do the classification. This keeps each path specialized and decreases cost.",
+    use: "Use this pattern when the inputs fall into clear types that need different processes.",
+    risk: "A wrong classification sends the input to a path that cannot do the task.",
+    d: { w: 420, h: 200, n: {
+      in: ["Input", 40, 100, "io"], r: ["Router", 140, 100, "llm"], a: ["Path A", 270, 35, "llm"],
+      b: ["Path B", 270, 100, "llm"], c: ["Path C", 270, 165, "llm"], out: ["Output", 380, 100, "io"] },
+      e: [["in","r"],["r","a",{l:"type A"}],["r","b"],["r","c",{l:"type C"}],["a","out"],["b","out"],["c","out"]] } },
+
+  { name: "Parallel sectioning", fam: "workflow",
+    desc: "Code divides one task into independent parts. Different model calls do the parts at the same time. Code then joins the results into one output. Each call has one narrow focus, so the quality of each part increases. The total time is approximately the time of the slowest part.",
+    use: "Use this pattern when the parts of a task do not depend on each other.",
+    risk: "Parts that do depend on each other give results that do not agree.",
+    d: { w: 420, h: 200, n: {
+      in: ["Input", 35, 100, "io"], sp: ["Split", 110, 100, "tool"], w1: ["LLM: part 1", 215, 35, "llm"],
+      w2: ["LLM: part 2", 215, 100, "llm"], w3: ["LLM: part 3", 215, 165, "llm"], j: ["Join", 315, 100, "tool"], out: ["Output", 385, 100, "io"] },
+      e: [["in","sp"],["sp","w1"],["sp","w2"],["sp","w3"],["w1","j"],["w2","j"],["w3","j"],["j","out"]] } },
+
+  { name: "Voting", fam: "workflow",
+    desc: "Many model calls do the same task. Each call can use a different prompt or temperature. An aggregator compares the answers and selects the result. The aggregator can use a majority vote or a threshold. This increases confidence in the result.",
+    use: "Use this pattern for high-risk decisions, for example a check for unsafe code.",
+    risk: "The cost increases with each vote, and all votes can share the same error.",
+    d: { w: 420, h: 200, n: {
+      in: ["Input", 40, 100, "io"], v1: ["LLM run 1", 165, 35, "llm"], v2: ["LLM run 2", 165, 100, "llm"],
+      v3: ["LLM run 3", 165, 165, "llm"], vote: ["Vote", 290, 100, "gate"], out: ["Output", 380, 100, "io"] },
+      e: [["in","v1"],["in","v2"],["in","v3"],["v1","vote",{l:"yes"}],["v2","vote",{l:"yes"}],["v3","vote",{l:"no"}],["vote","out",{l:"2 of 3"}]] } },
+
+  { name: "Map-reduce", fam: "workflow",
+    desc: "Code divides a large input into chunks. The map step sends each chunk to a model call with the same prompt. The reduce step joins the partial results into one result. If the partial results are too large, the reduce step can occur in more than one level.",
+    use: "Use this pattern for inputs that are larger than the context window, for example a full code repository.",
+    risk: "The map step cannot see across chunks, so it can miss links between them.",
+    d: { w: 430, h: 200, n: {
+      doc: ["Corpus", 40, 100, "store"], sp: ["Chunk", 122, 100, "tool"], m1: ["Map", 210, 35, "llm"],
+      m2: ["Map", 210, 100, "llm"], m3: ["Map", 210, 165, "llm"], r: ["Reduce", 300, 100, "llm"], out: ["Summary", 390, 100, "io"] },
+      e: [["doc","sp"],["sp","m1"],["sp","m2"],["sp","m3"],["m1","r"],["m2","r"],["m3","r"],["r","out"]] } },
+
+  { name: "ReAct loop", fam: "loop",
+    desc: "The agent repeats three steps: think, act and observe. In the think step, the model decides the next action. In the act step, it calls a tool. In the observe step, it reads the tool result. The loop stops when the model has sufficient data to give the answer.",
+    use: "Use this pattern for open tasks where you cannot know the number of steps.",
+    risk: "The agent can repeat the same action and make no progress.",
+    d: { w: 420, h: 200, n: {
+      in: ["Task", 40, 45, "io"], th: ["Think", 190, 45, "llm"], act: ["Act", 290, 155, "tool"],
+      ob: ["Observe", 90, 155, "llm"], ans: ["Answer", 360, 45, "io"] },
+      e: [["in","th"],["th","act",{l:"tool call"}],["act","ob",{l:"result"}],["ob","th"],["th","ans",{l:"done"}]] } },
+
+  { name: "Plan-and-execute", fam: "loop",
+    desc: "A planner model writes a full plan before any action. An executor does the steps of the plan one at a time. After each step, a replanner compares the result with the plan. If necessary, the replanner changes the steps that remain. This uses fewer calls to the large model than a pure ReAct loop.",
+    use: "Use this pattern for long tasks where a clear plan helps the agent stay on the goal.",
+    risk: "A plan that is wrong at the start can waste all the steps after it.",
+    d: { w: 420, h: 200, n: {
+      in: ["Goal", 35, 50, "io"], pl: ["Planner", 135, 50, "llm"], ex: ["Executor", 265, 50, "llm"],
+      rp: ["Replanner", 265, 155, "llm"], out: ["Result", 380, 155, "io"] },
+      e: [["in","pl"],["pl","ex",{l:"steps"}],["ex","rp",{bend:32,l:"result"}],["rp","ex",{bend:32,l:"next"}],["rp","out",{l:"done"}]] } },
+
+  { name: "Reflection", fam: "loop",
+    desc: "The same model writes a draft and then examines its own draft. It writes a critique of the errors and the gaps. It then writes a new draft that corrects them. Reflection needs no second model, but a different prompt for the critique gives better results.",
+    use: "Use this pattern for a cheap increase in the quality of text and code.",
+    risk: "A model often does not find its own errors, so the gain can be small.",
+    d: { w: 420, h: 190, n: {
+      in: ["Input", 35, 85, "io"], dr: ["Draft", 120, 85, "llm"], cr: ["Critique", 220, 85, "llm"],
+      rv: ["Revise", 320, 85, "llm"], out: ["Output", 320, 165, "io"] },
+      e: [["in","dr"],["dr","cr"],["cr","rv",{l:"notes"}],["rv","cr",{bend:46,l:"again",dash:1}],["rv","out",{l:"good"}]] } },
+
+  { name: "Evaluator-optimizer", fam: "loop",
+    desc: "A generator model writes a result. An evaluator model compares the result with clear criteria and writes feedback. The generator uses the feedback to make a better result. The loop continues until the evaluator accepts the result or the loop gets to its limit.",
+    use: "Use this pattern when you have clear criteria and feedback improves the result, for example in translation.",
+    risk: "Without a loop limit, the two models can continue for a long time.",
+    d: { w: 420, h: 200, n: {
+      in: ["Input", 40, 80, "io"], g: ["Generator", 160, 80, "llm"], ev: ["Evaluator", 320, 80, "llm"],
+      out: ["Output", 320, 170, "io"] },
+      e: [["in","g"],["g","ev",{bend:-34,l:"draft"}],["ev","g",{bend:-34,l:"feedback"}],["ev","out",{l:"accept"}]] } },
+
+  { name: "Test-driven code loop", fam: "loop",
+    desc: "The agent writes code and then runs it in a sandbox. A test suite or a compiler gives an objective result. If a test fails, the agent reads the error and changes the code. The loop stops when all tests pass. The tests give a clear stop condition.",
+    use: "Use this pattern for code tasks where you can write the tests before the code.",
+    risk: "The agent can change the tests to make them pass. Lock the test files.",
+    d: { w: 420, h: 200, n: {
+      sp: ["Spec", 35, 60, "io"], wc: ["Write code", 130, 60, "llm"], sb: ["Sandbox", 245, 60, "tool"],
+      t: ["Pass?", 355, 60, "gate"], done: ["Commit", 355, 160, "io"] },
+      e: [["sp","wc"],["wc","sb"],["sb","t",{l:"run"}],["t","done",{l:"yes"}],["t","wc",{bend:-62,l:"no: error log",dash:1}]] } },
+
+  { name: "Tree search", fam: "loop",
+    desc: "The model makes many possible next steps at each point. An evaluator gives each step a score. The search continues on the best branches and stops the weak branches. If a branch fails, the search goes back to an earlier point. This is slow, but it can solve problems that need many attempts.",
+    use: "Use this pattern for puzzles, proofs and plans where a first attempt usually fails.",
+    risk: "The number of branches increases very quickly, and the cost increases with it.",
+    d: { w: 420, h: 200, n: {
+      r: ["Problem", 210, 30, "llm"], a: ["Step A", 115, 100, "llm"], b: ["Step B", 305, 100, "llm"],
+      a1: ["A1", 60, 170, "pruned"], a2: ["A2", 170, 170, "pruned"], b1: ["B1", 250, 170, "pruned"], b2: ["Solution", 360, 170, "best"] },
+      e: [["r","a",{l:"0.6"}],["r","b",{l:"0.8"}],["a","a1",{l:"0.2",dash:1}],["a","a2",{l:"0.3",dash:1}],["b","b1",{l:"0.3",dash:1}],["b","b2",{l:"0.9"}]] } },
+
+  { name: "Orchestrator-workers", fam: "multi",
+    desc: "An orchestrator model reads the task and makes the subtasks during the run. It sends each subtask to a worker model. The workers send their results back. A synthesizer then joins the results into one answer. Unlike sectioning, the subtasks are not known before the start.",
+    use: "Use this pattern when the number and type of subtasks change with each input, for example a code change across many files.",
+    risk: "The orchestrator can make too many subtasks and increase the cost.",
+    d: { w: 420, h: 200, n: {
+      in: ["Task", 32, 100, "io"], o: ["Orchestrator", 128, 100, "llm"], w1: ["Worker", 245, 35, "llm"],
+      w2: ["Worker", 245, 100, "llm"], w3: ["Worker", 245, 165, "llm"], s: ["Synthesizer", 360, 100, "llm"] },
+      e: [["in","o"],["o","w1",{l:"subtask"}],["o","w2"],["o","w3"],["w1","s"],["w2","s"],["w3","s"]] } },
+
+  { name: "Hierarchical teams", fam: "multi",
+    desc: "A top supervisor manages team supervisors. Each team supervisor manages its own workers. A task goes down the tree and the results come up the tree. Each level sees only the data that it needs. This keeps a large system in control.",
+    use: "Use this pattern when one orchestrator has too many workers or tools to manage.",
+    risk: "Each level adds time, cost and a new point where data can get lost.",
+    d: { w: 420, h: 205, n: {
+      t: ["Supervisor", 210, 30, "llm"], la: ["Team lead A", 110, 100, "llm"], lb: ["Team lead B", 310, 100, "llm"],
+      w1: ["Worker", 55, 172, "tool"], w2: ["Worker", 160, 172, "tool"], w3: ["Worker", 260, 172, "tool"], w4: ["Worker", 365, 172, "tool"] },
+      e: [["t","la",{both:1}],["t","lb",{both:1}],["la","w1",{both:1}],["la","w2",{both:1}],["lb","w3",{both:1}],["lb","w4",{both:1}]] } },
+
+  { name: "Multi-agent debate", fam: "multi",
+    desc: "Two or more agents give answers to the same question. Each agent reads the answers of the others and writes a reply. After a set number of rounds, a judge reads the debate and gives the final answer. The debate can find errors that one agent alone does not find.",
+    use: "Use this pattern for questions with more than one possible view, for example a design review.",
+    risk: "Agents can agree on a wrong answer only because another agent said it.",
+    d: { w: 420, h: 200, n: {
+      q: ["Question", 45, 100, "io"], a: ["Agent A", 170, 38, "llm"], b: ["Agent B", 170, 162, "llm"],
+      j: ["Judge", 295, 100, "llm"], ans: ["Answer", 380, 100, "io"] },
+      e: [["q","a"],["q","b"],["a","b",{both:1,l:"rounds"}],["a","j"],["b","j"],["j","ans"]] } },
+
+  { name: "Handoff", fam: "multi",
+    desc: "Each agent has a specialty and a set of tools. When a request goes outside its specialty, the agent transfers control to a different agent. The new agent gets the full conversation. There is no central manager. Control moves from agent to agent as the task changes.",
+    use: "Use this pattern for support desks where one conversation crosses many departments.",
+    risk: "Two agents can transfer the request between them in a loop.",
+    d: { w: 420, h: 200, n: {
+      u: ["User", 38, 100, "io"], tr: ["Triage", 135, 100, "llm"], bi: ["Billing", 270, 38, "llm"],
+      te: ["Tech support", 270, 162, "llm"], re: ["Reply", 385, 100, "io"] },
+      e: [["u","tr"],["tr","bi",{l:"handoff"}],["tr","te",{l:"handoff"}],["te","bi",{l:"handoff",dash:1}],["bi","re"],["te","re"]] } },
+
+  { name: "Human-in-the-loop", fam: "control",
+    desc: "The agent stops before an action that has high risk. It shows the proposed action to a person. The person approves, edits or rejects the action. The agent then continues from the same state. The workflow must save its state, because the person can take hours to reply.",
+    use: "Use this pattern before payments, deletions, messages to customers and production changes.",
+    risk: "Too many approval requests cause people to approve without a check.",
+    d: { w: 420, h: 200, n: {
+      in: ["Request", 42, 60, "io"], ag: ["Agent", 140, 60, "llm"], cp: ["Risky?", 245, 60, "gate"],
+      h: ["Person", 245, 160, "human"], ex: ["Execute", 365, 60, "tool"] },
+      e: [["in","ag"],["ag","cp"],["cp","ex",{l:"no"}],["cp","h",{l:"yes"}],["h","ex",{l:"approve"}],["h","ag",{l:"reject",dash:1}]] } },
+
+  { name: "Guardrails", fam: "control",
+    desc: "Checks run before and after the main model call. An input guard examines the request for attacks, wrong topics and private data. An output guard examines the answer for policy violations and format errors. A failed check stops the flow or sends a safe reply. The guards can run in parallel with the main call to decrease delay.",
+    use: "Use this pattern for every agent that talks to users or reads data that you cannot trust.",
+    risk: "Strict guards block correct requests. Weak guards let attacks through.",
+    d: { w: 430, h: 190, n: {
+      in: ["Input", 35, 60, "io"], ig: ["Guard in", 115, 60, "gate"], llm: ["LLM", 215, 60, "llm"],
+      og: ["Guard out", 310, 60, "gate"], out: ["Output", 397, 60, "io"], safe: ["Safe reply", 215, 155, "io"] },
+      e: [["in","ig"],["ig","llm"],["llm","og"],["og","out"],["ig","safe",{l:"block",dash:1}],["og","safe",{l:"block",dash:1}]] } }
+];
+
+// One 24px line icon per workflow, in the same order as W.
+const ICONS = [
+  '<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/>',
+  '<circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6M7 8.5h6M7 11.5h4"/>',
+  '<ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v14c0 1.7 3.1 3 7 3s7-1.3 7-3V5M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/>',
+  '<rect x="2" y="9" width="5" height="6" rx="1"/><rect x="9.5" y="9" width="5" height="6" rx="1"/><rect x="17" y="9" width="5" height="6" rx="1"/><path d="M7 12h2.5M14.5 12H17"/>',
+  '<circle cx="8" cy="12" r="1.6"/><path d="M2 12h4.4M9.6 12H20M9.3 11l9.7-6M9.3 13l9.7 6M17 3l2 2-2.6 1.3M17 21l2-2-2.6-1.3"/>',
+  '<path d="M3 4v16M21 4v16M6 7h12M6 12h12M6 17h12"/>',
+  '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12.5l3 3 5-6.5"/>',
+  '<path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"/>',
+  '<path d="M20 12a8 8 0 1 1-2.4-5.7M20 3.5V8h-4.5"/><circle cx="12" cy="12" r="2"/>',
+  '<path d="M10 6h10M10 12h10M10 18h10M3.5 6l1.2 1.2L7 5M3.5 12l1.2 1.2L7 11"/><circle cx="5" cy="18" r="1.3"/>',
+  '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  '<path d="M3.5 17a8.5 8.5 0 1 1 17 0M12 17l4.5-5.5M3 20h18"/><circle cx="12" cy="17" r="1.2"/>',
+  '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',
+  '<circle cx="12" cy="4" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="12" r="2"/><circle cx="3.5" cy="20" r="1.5"/><circle cx="8.5" cy="20" r="1.5"/><circle cx="20.5" cy="20" r="1.5"/><path d="M10.8 5.6L7.2 10.4M13.2 5.6l3.6 4.8M5.3 13.9l-1.2 4.6M6.7 13.9l1.2 4.6M18.7 13.9l1.2 4.6"/>',
+  '<circle cx="12" cy="12" r="3"/><circle cx="4" cy="4" r="2"/><circle cx="20" cy="4" r="2"/><circle cx="4" cy="20" r="2"/><circle cx="20" cy="20" r="2"/><path d="M9.9 9.9L5.4 5.4M14.1 9.9l4.5-4.5M9.9 14.1l-4.5 4.5M14.1 14.1l4.5 4.5"/>',
+  '<rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-5h14v5"/>',
+  '<path d="M3 4h11v8H8l-3 3v-3H3zM17 9h4v8h-2v3l-3-3h-6v-2"/>',
+  '<path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"/>',
+  '<circle cx="12" cy="7" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>',
+  '<path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>'
+];
+
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+function size(label, kind) {
+  if (kind === "gate") return { w: label.length * 6.3 + 36, h: 40 };
+  if (kind === "store") return { w: label.length * 6.5 + 24, h: 36 };
+  return { w: Math.max(label.length * 6.5 + 20, 44), h: 28 };
+}
+function drawNode(svg, n) {
+  const { x, y, w, h, kind, label } = n;
+  const x0 = x - w / 2, y0 = y - h / 2;
+  if (kind === "gate") {
+    el("polygon", { points: `${x},${y0} ${x + w / 2},${y} ${x},${y + h / 2} ${x0},${y}`, class: "n-gate" }, svg);
+  } else if (kind === "store") {
+    const ry = 5;
+    el("path", { d: `M${x0},${y0 + ry} a${w / 2},${ry} 0 0 1 ${w},0 v${h - 2 * ry} a${w / 2},${ry} 0 0 1 ${-w},0 Z`, class: "n-store" }, svg);
+    el("path", { d: `M${x0},${y0 + ry} a${w / 2},${ry} 0 0 0 ${w},0`, class: "n-store", fill: "none" }, svg);
+  } else {
+    const rx = kind === "io" ? h / 2 : kind === "human" ? 10 : 3;
+    el("rect", { x: x0, y: y0, width: w, height: h, rx, class: "n-" + kind }, svg);
+  }
+  const t = el("text", { x, y: kind === "store" ? y + 3 : y, class: "t" + (kind === "pruned" ? " t-pruned" : "") }, svg);
+  t.textContent = label;
+}
+function clip(n, ux, uy) {
+  const hw = n.w / 2, hh = n.h / 2, ax = Math.abs(ux), ay = Math.abs(uy);
+  if (n.kind === "gate") return 1 / (ax / hw + ay / hh);
+  return Math.min(ax ? hw / ax : Infinity, ay ? hh / ay : Infinity);
+}
+function unit(dx, dy) { const L = Math.hypot(dx, dy) || 1; return [dx / L, dy / L]; }
+
+function diagram(d, id) {
+  const svg = el("svg", { viewBox: `0 0 ${d.w} ${d.h}`, role: "img" });
+  const defs = el("defs", {}, svg);
+  const m = el("marker", { id: "ah" + id, viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: "auto-start-reverse" }, defs);
+  el("path", { d: "M0,1 L10,5 L0,9 Z", class: "ah" }, m);
+  const nodes = {};
+  for (const k in d.n) {
+    const [label, x, y, kind] = d.n[k];
+    nodes[k] = { label, x, y, kind, ...size(label, kind) };
+  }
+  const labels = [];
+  for (const [a, b, o = {}] of d.e) {
+    const A = nodes[a], B = nodes[b];
+    let c = null;
+    if (o.bend) {
+      const [ux, uy] = unit(B.x - A.x, B.y - A.y);
+      c = { x: (A.x + B.x) / 2 - uy * o.bend, y: (A.y + B.y) / 2 + ux * o.bend };
+    }
+    const [sx, sy] = c ? unit(c.x - A.x, c.y - A.y) : unit(B.x - A.x, B.y - A.y);
+    const [ex, ey] = c ? unit(B.x - c.x, B.y - c.y) : unit(B.x - A.x, B.y - A.y);
+    const ts = clip(A, sx, sy) + (o.both ? 1.5 : 0.5), te = clip(B, ex, ey) + 1.5;
+    const S = { x: A.x + sx * ts, y: A.y + sy * ts }, E = { x: B.x - ex * te, y: B.y - ey * te };
+    const path = c ? `M${S.x},${S.y} Q${c.x},${c.y} ${E.x},${E.y}` : `M${S.x},${S.y} L${E.x},${E.y}`;
+    const attrs = { d: path, class: "e" + (o.dash ? " e-dash" : ""), "marker-end": `url(#ah${id})` };
+    if (o.both) attrs["marker-start"] = `url(#ah${id})`;
+    el("path", attrs, svg);
+    if (o.l) labels.push({ l: o.l, x: c ? .25 * S.x + .5 * c.x + .25 * E.x : (S.x + E.x) / 2, y: c ? .25 * S.y + .5 * c.y + .25 * E.y : (S.y + E.y) / 2 });
+  }
+  for (const k in nodes) drawNode(svg, nodes[k]);
+  for (const L of labels) el("text", { x: L.x, y: L.y, class: "el" }, svg).textContent = L.l;
+  return svg;
+}
+
+const sentences = s => s.split(/(?<=[.!?])\s+/).filter(Boolean);
+const words = s => s.split(/\s+/).filter(w => /[A-Za-z0-9]/.test(w)).length;
+
+const grid = document.getElementById("grid");
+let all = [];
+W.forEach((w, i) => {
+  const num = String(i + 1).padStart(2, "0");
+  const card = document.createElement("details");
+  card.className = "card";
+  card.id = "aw-" + num;
+  card.dataset.fam = w.fam;
+  card.innerHTML = `
+    <summary>
+      <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[i]}</svg></span>
+      <span class="sum-text">
+        <span class="meta"><span class="code">AW-${num}</span><span class="fam">${FAMILIES[w.fam]}</span></span>
+        <h2>${w.name}</h2>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="body">
+      <figure aria-label="Diagram of the ${w.name} pattern"></figure>
+      <p class="desc">${w.desc}</p>
+      <dl><dt>Use when</dt><dd>${w.use.replace(/^Use this pattern /, "")}</dd><dt class="risk">Risk</dt><dd>${w.risk}</dd></dl>
+      <div class="ste"><div class="bars"></div><span class="ste-text"></span></div>
+    </div>`;
+  card.querySelector("figure").appendChild(diagram(w.d, i));
+  const counts = [...sentences(w.desc), w.use, ...sentences(w.risk)].map(words);
+  all.push(...counts);
+  const bars = card.querySelector(".bars");
+  counts.forEach(c => {
+    const s = document.createElement("span");
+    s.style.height = Math.min(c, 26) / 26 * 26 + "px";
+    if (c > 20) s.className = "long";
+    s.title = c + " words";
+    bars.appendChild(s);
+  });
+  const lim = document.createElement("i");
+  lim.style.bottom = 25 / 26 * 26 + "px";
+  bars.appendChild(lim);
+  card.querySelector(".ste-text").textContent =
+    `${counts.length} sentences · longest ${Math.max(...counts)} words · limit 25`;
+  grid.appendChild(card);
+});
+
+const avg = (all.reduce((a, b) => a + b, 0) / all.length).toFixed(1);
+document.getElementById("stats").innerHTML =
+  `<span><b>20</b> patterns</span><span><b>5</b> families</span><span><b>${all.length}</b> sentences</span>` +
+  `<span>average <b>${avg}</b> words</span><span>longest <b>${Math.max(...all)}</b> words</span>`;
+
+const filters = document.getElementById("filters");
+const fams = [["all", "All"], ...Object.entries(FAMILIES)];
+fams.forEach(([k, label]) => {
+  const b = document.createElement("button");
+  b.className = "chip"; b.id = "f-" + k; b.type = "button";
+  const n = k === "all" ? W.length : W.filter(w => w.fam === k).length;
+  b.innerHTML = `${label}<span class="n">${n}</span>`;
+  b.setAttribute("aria-pressed", k === "all");
+  b.onclick = () => {
+    filters.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === b));
+    grid.querySelectorAll(".card").forEach(c => { c.hidden = k !== "all" && c.dataset.fam !== k; });
+  };
+  filters.appendChild(b);
+});
+const toggle = document.createElement("button");
+toggle.className = "chip tools"; toggle.id = "toggle-all"; toggle.type = "button";
+toggle.textContent = "Expand all";
+toggle.onclick = () => {
+  const open = toggle.textContent === "Expand all";
+  grid.querySelectorAll(".card").forEach(c => { c.open = open; });
+  toggle.textContent = open ? "Collapse all" : "Expand all";
+};
+filters.appendChild(toggle);
+
+const legend = document.getElementById("legend");
+[["Input / output", "io"], ["Model call", "llm"], ["Tool or code", "tool"], ["Decision", "gate"],
+ ["Person", "human"], ["Data store", "store"], ["Stopped branch", "pruned"]].forEach(([label, kind], i) => {
+  const sz = kind === "gate" ? { w: 30, h: 22 } : kind === "store" ? { w: 26, h: 22 } : { w: 30, h: 18 };
+  const tw = label.length * 6.4;
+  const svg = el("svg", { width: sz.w + tw + 22, height: 28, viewBox: `0 0 ${sz.w + tw + 22} 28` });
+  const g = { label: "", x: sz.w / 2 + 2, y: 14, kind, ...sz };
+  drawNode(svg, g);
+  el("text", { x: sz.w + 9, y: 14, class: "lg-t" }, svg).textContent = label;
+  legend.appendChild(svg);
+});
+</script>

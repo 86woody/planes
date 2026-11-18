@@ -1,0 +1,26 @@
+{
+  "name": "@mc/cli",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "mc": "./dist/mc.js"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "@github/copilot-sdk": "1.0.34",
+    "@mc/contracts": "*",
+    "@mc/core": "*",
+    "@mc/daemon": "*",
+    "@mc/platform": "*"
+  }
+}

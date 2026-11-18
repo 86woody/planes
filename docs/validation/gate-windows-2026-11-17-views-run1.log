@@ -1,0 +1,58 @@
+$ node scripts/gate.mjs m5
+STAGE toolchain PASS 711ms  node v24.15.0 pnpm 11.2.2 git 2.53.0.windows.3
+STAGE stubs PASS 400ms
+STAGE typecheck PASS 2024ms
+STAGE lint PASS 3538ms
+STAGE contracts PASS 1807ms
+STAGE platform-fake PASS 1737ms
+STAGE gate-self PASS 3563ms
+STAGE core PASS 2023ms
+STAGE process PASS 1739ms
+STAGE daemon PASS 4365ms
+STAGE hook PASS 5856ms
+STAGE integration PASS 10324ms
+STAGE ui-unit PASS 3505ms
+STAGE ui-build PASS 1462ms
+STAGE e2e PASS 68954ms
+STAGE platform-unit PASS 2034ms
+STAGE os PASS 6854ms
+STAGE cli PASS 10232ms
+STAGE vscode PASS 2261ms
+STAGE system PASS 6487ms
+STAGE budget PASS 18638ms
+STAGE package FAIL 10831ms
+  | 
+  | ⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+  | 
+  |  FAIL  |packaging| packaging-test/install.test.mjs > package install
+  | AssertionError: npm i -g failed: : expected 3221226505 to be +0 // Object.is equality
+  | 
+  | - Expected
+  | + Received
+  | 
+  | - 0
+  | + 3221226505
+  | 
+  |  ❯ install packaging-test/install.test.mjs:85:50
+  |      83|     { env, timeout: 240000 },
+  |      84|   );
+  |      85|   expect(r.code, `npm i -g failed: ${r.stderr}`).toBe(0);
+  |        |                                                  ^
+  |      86|   return r;
+  |      87| }
+  |  ❯ packaging-test/install.test.mjs:193:5
+  | 
+  | ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+  | 
+  | 
+  |  Test Files  1 failed | 3 passed (4)
+  |       Tests  18 passed | 7 skipped (25)
+  |    Start at  07:25:18
+  |    Duration  4.39s (transform 21ms, setup 0ms, collect 77ms, tests 12.90s, environment 0ms, prepare 485ms)
+  | 
+  | JSON report written to C:/Users/you/Workspace/.worktrees/mission-control/integration/.gate/reports/package.json
+STAGE audit FAIL 460ms
+  | ids 584/591 (os=windows), skipped 7
+  | missing: SK-01,SK-02,SK-03,SK-04,SK-05,SK-06,SK-07
+GATE m5 FAIL 21/23
+[ELIFECYCLE] Command failed with exit code 1.

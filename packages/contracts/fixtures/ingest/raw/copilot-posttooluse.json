@@ -1,0 +1,14 @@
+{
+  "session_id": "cp-fixture-1",
+  "timestamp": "2026-11-12T20:15:10.000Z",
+  "cwd": "C:\\Fixtures\\project",
+  "hook_event_name": "PostToolUse",
+  "tool_name": "bash",
+  "tool_input": {
+    "command": "ls"
+  },
+  "tool_result": {
+    "result_type": "success",
+    "text_result_for_llm": "a b c"
+  }
+}

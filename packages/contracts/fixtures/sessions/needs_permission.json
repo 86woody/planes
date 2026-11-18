@@ -1,0 +1,48 @@
+{
+  "id": "claude-code:fixture-needs_permission",
+  "adapter": "claude-code",
+  "nativeId": "fixture-needs_permission",
+  "callsign": "MC-03",
+  "title": "Fixture session",
+  "cwd": "C:Fixturesproject",
+  "project": "project",
+  "branch": "main",
+  "state": "needs_permission",
+  "attention": {
+    "active": true,
+    "reason": "permission",
+    "since": "2026-11-12T09:02:00.000Z",
+    "acknowledged": false,
+    "message": "Claude needs permission to use Bash"
+  },
+  "startedAt": "2026-11-12T08:00:00.000Z",
+  "updatedAt": "2026-11-12T09:02:00.000Z",
+  "lastEvent": {
+    "name": "PermissionRequest",
+    "at": "2026-11-12T09:02:00.000Z",
+    "summary": "Waiting for permission"
+  },
+  "process": {
+    "agentPid": 3131,
+    "alive": true
+  },
+  "host": {
+    "kind": "windows-terminal",
+    "app": "WindowsTerminal.exe",
+    "os": "windows",
+    "display": "win32",
+    "multiplexer": null
+  },
+  "restore": {
+    "capability": "full",
+    "reason": null,
+    "lastResult": null
+  },
+  "stats": {
+    "prompts": 2,
+    "tools": 5,
+    "notifications": 1,
+    "events": 12
+  },
+  "endReason": null
+}

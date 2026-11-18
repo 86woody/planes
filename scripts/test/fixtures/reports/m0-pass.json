@@ -1,0 +1,121 @@
+{
+  "numTotalTests": 22,
+  "testResults": [
+    {
+      "name": "fixture",
+      "status": "passed",
+      "assertionResults": [
+        {
+          "title": "CT-01 fixture test",
+          "fullName": "fixture CT-01",
+          "status": "passed"
+        },
+        {
+          "title": "CT-02 fixture test",
+          "fullName": "fixture CT-02",
+          "status": "passed"
+        },
+        {
+          "title": "CT-03 fixture test",
+          "fullName": "fixture CT-03",
+          "status": "passed"
+        },
+        {
+          "title": "CT-04 fixture test",
+          "fullName": "fixture CT-04",
+          "status": "passed"
+        },
+        {
+          "title": "CT-05 fixture test",
+          "fullName": "fixture CT-05",
+          "status": "passed"
+        },
+        {
+          "title": "CT-06 fixture test",
+          "fullName": "fixture CT-06",
+          "status": "passed"
+        },
+        {
+          "title": "CT-07 fixture test",
+          "fullName": "fixture CT-07",
+          "status": "passed"
+        },
+        {
+          "title": "CT-08 fixture test",
+          "fullName": "fixture CT-08",
+          "status": "passed"
+        },
+        {
+          "title": "FK-01 fixture test",
+          "fullName": "fixture FK-01",
+          "status": "passed"
+        },
+        {
+          "title": "FK-02 fixture test",
+          "fullName": "fixture FK-02",
+          "status": "passed"
+        },
+        {
+          "title": "FK-03 fixture test",
+          "fullName": "fixture FK-03",
+          "status": "passed"
+        },
+        {
+          "title": "FK-04 fixture test",
+          "fullName": "fixture FK-04",
+          "status": "passed"
+        },
+        {
+          "title": "FK-05 fixture test",
+          "fullName": "fixture FK-05",
+          "status": "passed"
+        },
+        {
+          "title": "FK-06 fixture test",
+          "fullName": "fixture FK-06",
+          "status": "passed"
+        },
+        {
+          "title": "FK-07 fixture test",
+          "fullName": "fixture FK-07",
+          "status": "passed"
+        },
+        {
+          "title": "FK-08 fixture test",
+          "fullName": "fixture FK-08",
+          "status": "passed"
+        },
+        {
+          "title": "GT-01 fixture test",
+          "fullName": "fixture GT-01",
+          "status": "passed"
+        },
+        {
+          "title": "GT-02 fixture test",
+          "fullName": "fixture GT-02",
+          "status": "passed"
+        },
+        {
+          "title": "GT-03 fixture test",
+          "fullName": "fixture GT-03",
+          "status": "passed"
+        },
+        {
+          "title": "GT-04 fixture test",
+          "fullName": "fixture GT-04",
+          "status": "passed"
+        },
+        {
+          "title": "GT-05 fixture test",
+          "fullName": "fixture GT-05",
+          "status": "passed"
+        },
+        {
+          "title": "GT-06 fixture test",
+          "fullName": "fixture GT-06",
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "v": 1,
+  "adapter": "claude-code",
+  "event": "Notification",
+  "nativeSessionId": "fixture-1",
+  "sentAt": 1794000000000,
+  "seq": 0,
+  "payload": {
+    "cwd": "C:Fixturesproject",
+    "permission_mode": "default",
+    "message": "Claude is waiting for your input",
+    "title": "Claude Code",
+    "notification_type": "idle_prompt"
+  },
+  "origin": {
+    "os": "windows",
+    "hookPid": 4242,
+    "agent": {
+      "pid": 3131,
+      "name": "claude.exe",
+      "startTime": "133456789012345678"
+    },
+    "ancestry": [
+      {
+        "pid": 3131,
+        "name": "claude.exe",
+        "startTime": "133456789012345678"
+      },
+      {
+        "pid": 2828,
+        "name": "pwsh.exe",
+        "startTime": "133456789000000000"
+      },
+      {
+        "pid": 1717,
+        "name": "WindowsTerminal.exe",
+        "startTime": "133456788000000000"
+      }
+    ],
+    "tty": null,
+    "env": {
+      "WT_SESSION": "3f2a9c1e-7b4d-4e8a-9f10-2c5d6e7f8a9b",
+      "CLAUDE_CODE_ENTRYPOINT": "cli"
+    },
+    "console": {
+      "consoleHwnd": "0x00000000001A0B2C",
+      "ownerHwnd": "0x00000000001A0B2D"
+    }
+  }
+}

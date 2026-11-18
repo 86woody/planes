@@ -1,0 +1,30 @@
+- article "MC-02" [ref=e39]:
+  - generic [ref=e40]:
+    - generic [ref=e41]: MC-02
+    - generic [ref=e44]: NOMINAL
+    - generic [ref=e45]: MECO
+    - generic [ref=e46]: WIN TERMINAL
+  - generic [ref=e47]:
+    - generic [ref=e48]:
+      - generic [ref=e49]: copilot-demo
+      - generic [ref=e50]: ⎇ copilot-demo
+    - generic [ref=e51]: "Reply with the single word: ready"
+    - generic [ref=e52]:
+      - generic [ref=e53]: T+ 00:00:50
+      - generic [ref=e54]:
+        - text: LAST Turn complete
+        - generic [ref=e55]: · 48s
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]: PROMPTS
+        - generic [ref=e59]: "1"
+      - generic [ref=e60]:
+        - generic [ref=e61]: TOOLS
+        - generic [ref=e62]: "0"
+      - generic [ref=e63]:
+        - generic [ref=e64]: ALERTS
+        - generic [ref=e65]: "0"
+  - generic [ref=e66]:
+    - button "RESTORE ▸" [ref=e67] [cursor=pointer]
+    - button "ACK" [ref=e68] [cursor=pointer]
+    - generic [ref=e72]: FULL

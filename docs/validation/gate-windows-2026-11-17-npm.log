@@ -1,0 +1,28 @@
+
+> mission-control@1.0.1 gate
+> node scripts/gate.mjs m5
+
+STAGE toolchain PASS 405ms  node v24.15.0 npm 11.12.1 git 2.53.0.windows.3
+STAGE stubs PASS 105ms
+STAGE typecheck PASS 3798ms
+STAGE lint PASS 3629ms
+STAGE contracts PASS 1532ms
+STAGE platform-fake PASS 1523ms
+STAGE gate-self PASS 1987ms
+STAGE core PASS 1513ms
+STAGE process PASS 1477ms
+STAGE daemon PASS 4128ms
+STAGE hook PASS 5692ms
+STAGE integration PASS 10332ms
+STAGE ui-unit PASS 2831ms
+STAGE ui-build PASS 1532ms
+STAGE e2e PASS 71986ms
+STAGE platform-unit PASS 1682ms
+STAGE os PASS 6161ms
+STAGE cli PASS 10908ms
+STAGE vscode PASS 1868ms
+STAGE system PASS 7052ms
+STAGE budget PASS 18181ms
+STAGE package PASS 28068ms
+STAGE audit PASS 95ms  ids 601/601 (os=windows), skipped 0
+GATE m5 PASS 23/23

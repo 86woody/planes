@@ -1,0 +1,257 @@
+/* DESIGN.md 3a, the session page. Tokens only; no new colours. */
+
+.pagev {
+  grid-column: 1 / -1;
+  min-height: 0;
+  overflow: auto;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--r-hero);
+  padding: 22px 26px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-variant-numeric: tabular-nums;
+}
+
+.sv-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.sv-back {
+  color: var(--ink2);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.sv-cs {
+  margin: 0;
+  font: 500 20px/1.2 var(--mono);
+  color: var(--ink);
+}
+
+.sv-title {
+  color: var(--ink2);
+}
+
+.sv-sub {
+  color: var(--ink3);
+  font-size: 13px;
+}
+
+.sv-actions {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.sv-muted {
+  color: var(--ink3);
+  font-size: 13px;
+}
+
+.sv-nodata {
+  margin: 28px 0 0;
+  font: 300 26px/1.3 var(--sans);
+  color: var(--ink);
+}
+
+.sv-nodata .sv-muted {
+  display: block;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 0;
+}
+
+.kpi {
+  background: var(--card3);
+  border: 1px solid var(--hair);
+  border-radius: var(--r);
+  padding: 12px 14px;
+  min-width: 0;
+}
+
+.kpi h3 {
+  margin: 0;
+  font: 300 12px/1.3 var(--sans);
+  color: var(--ink3);
+}
+
+.kpi b {
+  display: block;
+  font: 200 34px/1.1 var(--sans);
+  color: var(--ink);
+  margin: 4px 0 2px;
+}
+
+.kpi small {
+  display: block;
+  font-size: 12px;
+  color: var(--ink3);
+  overflow-wrap: anywhere;
+}
+
+.kpi.over,
+.kpi.over b,
+.kpi.over small {
+  color: var(--look);
+}
+
+.sv-sec {
+  border-top: 1px solid var(--hair);
+  margin-top: 18px;
+  padding-top: 14px;
+}
+
+.sv-sec h3 {
+  margin: 0 0 10px;
+  font: 300 15px/1.3 var(--sans);
+  color: var(--ink2);
+}
+
+.sv-calls {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 64px;
+}
+
+.bar {
+  display: block;
+  width: 6px;
+  min-height: 4px;
+  border-radius: 2px;
+}
+
+.sv-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--ink2);
+}
+
+.sv-leg {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sw {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+[data-model="0"] { background: var(--ink); }
+[data-model="1"] { background: var(--ink2); }
+[data-model="2"] { background: var(--ink3); }
+[data-model="3"] { background: var(--go); }
+[data-model="4"] { background: var(--ink4); }
+[data-failed] { background: var(--look); }
+[data-sub] { opacity: 0.5; }
+
+.sv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.sv-table th,
+.sv-table td {
+  text-align: left;
+  padding: 7px 8px;
+  border-top: 1px solid var(--hair);
+  color: var(--ink);
+  vertical-align: top;
+}
+
+.sv-table th {
+  color: var(--ink3);
+  font-weight: 400;
+}
+
+.sv-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.sv-table td.over,
+.sv-table td[data-over] {
+  color: var(--look);
+}
+
+.sv-table a {
+  color: var(--ink);
+}
+
+.sv-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px 18px;
+  margin: 0;
+}
+
+.sv-facts dt {
+  font-size: 12px;
+  color: var(--ink3);
+}
+
+.sv-facts dd {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.pill {
+  display: inline-block;
+  border: 1px solid var(--hair2);
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 12px;
+  color: var(--ink2);
+}
+
+.pill.go {
+  color: var(--go);
+}
+
+.pill.look {
+  color: var(--look);
+  border-color: var(--look-line);
+  background: var(--look-bg);
+}
+
+.chip {
+  display: inline-block;
+  border: 1px solid var(--hair2);
+  border-radius: 6px;
+  padding: 0 6px;
+  font: 400 11px var(--mono);
+  color: var(--ink3);
+}
+
+@media (max-width: 1180px) {
+  .kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sv-actions {
+    margin-left: 0;
+  }
+}

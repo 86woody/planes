@@ -1,0 +1,4 @@
+[
+  { "id": 101, "pid": 4321, "title": "project-x", "wm_class": "Gnome-terminal", "focus": true, "minimized": false },
+  { "id": 102, "pid": 4500, "title": "other", "wm_class": "code", "focus": false, "minimized": true }
+]

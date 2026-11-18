@@ -1,0 +1,13 @@
+{"type":"session.start","data":{"sessionId":"s1"},"id":"e1","parentId":null,"timestamp":"2026-11-16T10:00:00.000Z"}
+{"type":"user.message","data":{"content":"SECRET-ARGS-7731 please refactor"},"id":"e2","parentId":"e1","timestamp":"2026-11-16T10:00:01.000Z"}
+{"type":"session.usage_record","data":{"usage":{"model":"gpt-5.1","inputTokens":1000,"outputTokens":200,"cacheReadTokens":300,"cacheWriteTokens":50,"reasoningTokens":20,"maxPromptTokens":8000,"timeToFirstTokenMs":400,"duration":2500,"initiator":"user"}},"id":"e3","parentId":"e2","timestamp":"2026-11-16T10:00:10.000Z"}
+{"type":"tool.execution_start","data":{"toolCallId":"t1","toolName":"bash","arguments":{"command":"echo SECRET-ARGS-7731"}},"id":"e4","parentId":"e3","timestamp":"2026-11-16T10:00:11.000Z"}
+{"type":"tool.execution_complete","data":{"toolCallId":"t1","success":true,"result":{"content":"SECRET-ARGS-7731"}},"id":"e5","parentId":"e4","timestamp":"2026-11-16T10:00:12.000Z"}
+{"type":"permission.requested","data":{"requestId":"p1"},"id":"e6","parentId":"e5","timestamp":"2026-11-16T10:00:20.000Z"}
+{"type":"permission.completed","data":{"requestId":"p1","result":{"kind":"approved-once"}},"id":"e7","parentId":"e6","timestamp":"2026-11-16T10:00:25.000Z"}
+{"type":"subagent.started","data":{"agentName":"explore"},"id":"e8","parentId":"e7","timestamp":"2026-11-16T10:00:30.000Z"}
+{"type":"assistant.usage","data":{"model":"gpt-5.1-mini","inputTokens":500,"outputTokens":80,"initiator":"sub-agent","timeToFirstTokenMs":300,"duration":900,"content":"SECRET-ARGS-7731"},"id":"e9","parentId":"e8","timestamp":"2026-11-16T10:00:40.000Z"}
+{"type":"subagent.completed","data":{"agentName":"explore","model":"gpt-5.1-mini","durationMs":1200,"configuredModelMatchesActual":true},"id":"e10","parentId":"e9","timestamp":"2026-11-16T10:00:42.000Z"}
+{"type":"session.usage_checkpoint","data":{"totalNanoAiu":4200},"id":"e11","parentId":"e10","timestamp":"2026-11-16T10:01:00.000Z"}
+{"type":"session.shutdown","data":{"totalNanoAiu":5100,"currentTokens":4000,"codeChanges":{"linesAdded":12,"linesRemoved":3}},"id":"e12","parentId":"e11","timestamp":"2026-11-16T10:02:00.000Z"}
+{"type":"something.new","data":{},"id":"e13","parentId":"e12","timestamp":"2026-11-16T10:02:01.000Z"}

@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mission-control.local/contracts/ingest.schema.json",
+  "title": "IngestEnvelope",
+  "description": "One agent event as sent by mc-hook (or any adapter) to POST /ingest/v1/events, and as stored in spool files and events.jsonl. See ingest.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["v", "adapter", "event", "nativeSessionId", "sentAt", "seq", "payload", "origin"],
+  "properties": {
+    "v": { "const": 1 },
+    "adapter": { "enum": ["claude-code", "codex", "copilot-cli", "shell", "generic"] },
+    "event": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,63}$",
+      "description": "Adapter-native event name. Claude Code: hook_event_name verbatim. Codex: 'agent-turn-complete'. Shell: ShellStart, ShellPrompt, ShellCommandStart, ShellCommandEnd, ShellExit."
+    },
+    "nativeSessionId": { "type": "string", "pattern": "^[A-Za-z0-9._-]{1,128}$" },
+    "sentAt": { "type": "integer", "minimum": 0, "description": "Unix epoch milliseconds when the hook process started: Math.floor(performance.timeOrigin) in mc-hook (ingest.md 3). Orders events by spawn time, which follows the agent's event order." },
+    "seq": { "type": "integer", "minimum": 0, "description": "Per hook process, always 0 for mc-hook (one event per process). Adapters that batch (shell integration) increment it." },
+    "payload": {
+      "type": "object",
+      "description": "Allowlisted fields only, ingest.md section 4. Unknown keys are rejected by the daemon (400).",
+      "additionalProperties": false,
+      "properties": {
+        "cwd": { "type": "string", "maxLength": 1024 },
+        "source": { "type": "string", "maxLength": 32 },
+        "model": { "type": "string", "maxLength": 64 },
+        "permission_mode": { "type": "string", "maxLength": 32 },
+        "prompt": { "type": "string", "maxLength": 200 },
+        "message": { "type": "string", "maxLength": 200 },
+        "title": { "type": "string", "maxLength": 100 },
+        "notification_type": { "type": "string", "maxLength": 48 },
+        "tool_name": { "type": "string", "maxLength": 64 },
+        "reason": { "type": "string", "maxLength": 32 },
+        "error": { "type": "string", "maxLength": 200 },
+        "agent_type": { "type": "string", "maxLength": 64 },
+        "last_assistant_message": { "type": "string", "maxLength": 200 },
+        "exit_code": { "type": "integer" },
+        "command": { "type": "string", "maxLength": 80, "description": "Shell adapter only: first word of the command line (the program name), never arguments." },
+        "duration_ms": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "origin": { "$ref": "#/$defs/Origin" }
+  },
+  "$defs": {
+    "ProcessInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pid", "name"],
+      "properties": {
+        "pid": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string", "maxLength": 128, "description": "Image basename, e.g. 'node.exe', 'claude', 'WindowsTerminal.exe', 'Code Helper'." },
+        "startTime": { "type": "string", "maxLength": 40, "description": "Opaque, platform-specific, stable for the process lifetime. Windows: FILETIME as decimal string. Linux: /proc/<pid>/stat field 22. macOS: ps lstart as given." }
+      }
+    },
+    "Origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["os", "hookPid", "agent", "ancestry", "tty", "env", "console"],
+      "properties": {
+        "os": { "enum": ["windows", "macos", "linux"] },
+        "hookPid": { "type": "integer", "minimum": 1 },
+        "agent": {
+          "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/ProcessInfo" }],
+          "description": "The agent process (nearest ancestor matching the adapter's agent-name rule, ingest.md section 3)."
+        },
+        "ancestry": {
+          "type": "array",
+          "maxItems": 16,
+          "items": { "$ref": "#/$defs/ProcessInfo" },
+          "description": "Parent chain starting at the hook's parent, nearest first, up to 16 entries or the first PID 1/0/system process."
+        },
+        "tty": { "type": ["string", "null"], "maxLength": 64, "description": "POSIX: controlling tty of the agent process, e.g. /dev/ttys003 or /dev/pts/4. Windows: null." },
+        "env": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Allowlisted environment variables only (ingest.md section 2). Values truncated to 256 chars. Absent variables are omitted.",
+          "properties": {
+            "TERM_PROGRAM": { "type": "string", "maxLength": 256 },
+            "TERM_PROGRAM_VERSION": { "type": "string", "maxLength": 256 },
+            "TERM": { "type": "string", "maxLength": 256 },
+            "WT_SESSION": { "type": "string", "maxLength": 256 },
+            "WT_PROFILE_ID": { "type": "string", "maxLength": 256 },
+            "ITERM_SESSION_ID": { "type": "string", "maxLength": 256 },
+            "TERM_SESSION_ID": { "type": "string", "maxLength": 256 },
+            "TMUX": { "type": "string", "maxLength": 256 },
+            "TMUX_PANE": { "type": "string", "maxLength": 256 },
+            "KITTY_WINDOW_ID": { "type": "string", "maxLength": 256 },
+            "KITTY_LISTEN_ON": { "type": "string", "maxLength": 256 },
+            "WEZTERM_PANE": { "type": "string", "maxLength": 256 },
+            "WEZTERM_UNIX_SOCKET": { "type": "string", "maxLength": 256 },
+            "WINDOWID": { "type": "string", "maxLength": 256 },
+            "DISPLAY": { "type": "string", "maxLength": 256 },
+            "WAYLAND_DISPLAY": { "type": "string", "maxLength": 256 },
+            "XDG_CURRENT_DESKTOP": { "type": "string", "maxLength": 256 },
+            "XDG_SESSION_TYPE": { "type": "string", "maxLength": 256 },
+            "SWAYSOCK": { "type": "string", "maxLength": 256 },
+            "HYPRLAND_INSTANCE_SIGNATURE": { "type": "string", "maxLength": 256 },
+            "WSL_DISTRO_NAME": { "type": "string", "maxLength": 256 },
+            "SSH_CONNECTION": { "const": "present", "description": "Value replaced by the literal 'present'; the address is never sent." },
+            "CLAUDE_CODE_ENTRYPOINT": { "type": "string", "maxLength": 256 },
+            "VSCODE_PID": { "type": "string", "maxLength": 256 }
+          }
+        },
+        "console": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["consoleHwnd", "ownerHwnd"],
+          "description": "Windows only (null fields elsewhere). Hex strings like '0x00000000001A0B2C'.",
+          "properties": {
+            "consoleHwnd": { "type": ["string", "null"], "pattern": "^0x[0-9A-F]{16}$" },
+            "ownerHwnd": { "type": ["string", "null"], "pattern": "^0x[0-9A-F]{16}$" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mission-control.local/contracts/session.schema.json",
+  "title": "Session",
+  "description": "The public view of one agent or shell session. Sent to the UI and the CLI. Never contains window handles, PIDs of anything but the agent, or raw payloads.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "adapter", "nativeId", "callsign", "title", "cwd", "project", "branch",
+    "state", "attention", "startedAt", "updatedAt", "lastEvent", "process", "host",
+    "restore", "stats", "endReason"
+  ],
+  "properties": {
+    "id": { "$ref": "#/$defs/SessionId" },
+    "adapter": { "$ref": "#/$defs/Adapter" },
+    "nativeId": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "callsign": { "type": "string", "pattern": "^MC-[0-9]{2}$" },
+    "title": { "type": "string", "maxLength": 80, "description": "Derived: first prompt (truncated to 80) if capturePromptText, else project name." },
+    "cwd": { "type": "string", "maxLength": 1024 },
+    "project": { "type": "string", "maxLength": 128, "description": "Basename of the git top-level of cwd, else basename of cwd." },
+    "branch": { "type": ["string", "null"], "maxLength": 128 },
+    "state": { "$ref": "#/$defs/State" },
+    "attention": { "$ref": "#/$defs/Attention" },
+    "startedAt": { "$ref": "#/$defs/Instant" },
+    "updatedAt": { "$ref": "#/$defs/Instant" },
+    "lastEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "at", "summary"],
+      "properties": {
+        "name": { "type": "string", "maxLength": 64, "description": "Adapter-native event name, e.g. PostToolUse." },
+        "at": { "$ref": "#/$defs/Instant" },
+        "summary": { "type": "string", "maxLength": 120, "description": "Human line, e.g. 'Tool: Bash' or 'Waiting for input'. Rules in attention.md section 5." }
+      }
+    },
+    "process": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agentPid", "alive"],
+      "properties": {
+        "agentPid": { "type": ["integer", "null"], "minimum": 1 },
+        "alive": { "type": ["boolean", "null"], "description": "null = unknown (no pid)." }
+      }
+    },
+    "host": { "$ref": "#/$defs/Host" },
+    "restore": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["capability", "reason", "lastResult"],
+      "properties": {
+        "capability": { "enum": ["full", "window", "none"] },
+        "reason": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/RestoreReason" }] },
+        "lastResult": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/FocusResult" }] }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prompts", "tools", "notifications", "events"],
+      "properties": {
+        "prompts": { "type": "integer", "minimum": 0 },
+        "tools": { "type": "integer", "minimum": 0 },
+        "notifications": { "type": "integer", "minimum": 0, "description": "OS notifications sent for this session." },
+        "events": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "endReason": {
+      "oneOf": [
+        { "type": "null" },
+        { "enum": ["clear", "resume", "logout", "prompt_input_exit", "other", "process_exit", "lost"] }
+      ]
+    },
+    "telemetry": {
+      "description": "D-56. Usage and work telemetry. Absent or null when the adapter has no telemetry source (copilot-cli and claude-code have one; D-61). Never contains prompt, response, tool input or tool output text.",
+      "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/Telemetry" }]
+    }
+  },
+  "$defs": {
+    "SessionId": { "type": "string", "pattern": "^(claude-code|codex|copilot-cli|shell|generic):[A-Za-z0-9._-]{1,128}$" },
+    "Adapter": { "enum": ["claude-code", "codex", "copilot-cli", "shell", "generic"] },
+    "Instant": { "type": "string", "format": "date-time", "description": "RFC 3339 UTC with milliseconds, e.g. 2026-11-08T20:15:03.120Z." },
+    "State": {
+      "enum": ["starting", "working", "needs_permission", "needs_input", "idle", "error", "ended", "lost"],
+      "description": "Display labels in DESIGN.md section 4: starting=T-MINUS, working=ASCENT, needs_permission=GO/NO-GO, needs_input=HOLD, idle=NOMINAL, error=ANOMALY, ended=SPLASHDOWN, lost=LOS."
+    },
+    "AttentionReason": { "enum": ["permission", "input", "error", "done"] },
+    "Attention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["active", "reason", "since", "acknowledged", "message"],
+      "properties": {
+        "active": { "type": "boolean" },
+        "reason": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/AttentionReason" }] },
+        "since": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/Instant" }] },
+        "acknowledged": { "type": "boolean" },
+        "message": { "type": ["string", "null"], "maxLength": 200 }
+      }
+    },
+    "HostKind": {
+      "enum": [
+        "vscode-terminal", "vscode-extension", "windows-terminal", "conhost",
+        "macos-terminal", "iterm2", "wezterm", "kitty", "linux-terminal", "remote", "unknown"
+      ]
+    },
+    "Host": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "app", "os", "display", "multiplexer"],
+      "properties": {
+        "kind": { "$ref": "#/$defs/HostKind" },
+        "app": { "type": ["string", "null"], "maxLength": 64, "description": "Executable or app name of the window owner, e.g. 'Code.exe', 'WindowsTerminal.exe', 'iTerm2', 'gnome-terminal-server'." },
+        "os": { "enum": ["windows", "macos", "linux"] },
+        "display": { "enum": ["win32", "cocoa", "x11", "wayland", null] },
+        "multiplexer": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["kind", "pane"],
+              "properties": {
+                "kind": { "enum": ["tmux"] },
+                "pane": { "type": "string", "pattern": "^%[0-9]+$" }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "Count": { "type": "integer", "minimum": 0 },
+    "NullableMs": { "type": ["number", "null"], "minimum": 0 },
+    "ShortName": { "type": "string", "maxLength": 64 },
+    "Telemetry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "updatedAt", "sources", "model", "tokens", "tokenRate", "context", "credits", "calls",
+        "latency", "errors", "tools", "permissions", "input", "subagents", "compaction",
+        "rewinds", "truncations", "warnings", "codeChanges", "task", "recentCalls", "unknownEvents"
+      ],
+      "properties": {
+        "updatedAt": { "$ref": "#/$defs/Instant" },
+        "sources": { "type": "array", "uniqueItems": true, "items": { "enum": ["events", "otel", "transcript"] }, "description": "events = the session's events.jsonl; otel = an OTel file under stateDir/otel; transcript = the Claude Code transcript and its subagent transcripts (D-61)." },
+        "model": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/ShortName" }], "description": "Model of the newest model call." },
+        "tokens": {
+          "type": "object", "additionalProperties": false,
+          "required": ["input", "output", "cacheRead", "cacheWrite", "reasoning"],
+          "properties": {
+            "input": { "$ref": "#/$defs/Count" }, "output": { "$ref": "#/$defs/Count" },
+            "cacheRead": { "$ref": "#/$defs/Count" }, "cacheWrite": { "$ref": "#/$defs/Count" },
+            "reasoning": { "$ref": "#/$defs/Count" }
+          }
+        },
+        "tokenRate": { "type": "number", "minimum": 0, "description": "input + output tokens of model calls that finished in the last 60 s, per minute." },
+        "context": {
+          "type": "object", "additionalProperties": false,
+          "required": ["estimatePct", "promptTokens", "maxPromptTokens"],
+          "properties": {
+            "estimatePct": { "type": ["number", "null"], "minimum": 0, "maximum": 100, "description": "100 * promptTokens / maxPromptTokens of the newest call; an estimate (research note C3)." },
+            "promptTokens": { "type": ["integer", "null"], "minimum": 0 },
+            "maxPromptTokens": { "type": ["integer", "null"], "minimum": 0 }
+          }
+        },
+        "credits": {
+          "type": "object", "additionalProperties": false,
+          "required": ["nanoAiu", "aiCredits"],
+          "properties": {
+            "nanoAiu": { "type": ["integer", "null"], "minimum": 0, "description": "Newest totalNanoAiu (usage_checkpoint or shutdown)." },
+            "aiCredits": { "type": ["number", "null"], "minimum": 0, "description": "nanoAiu / 1e9 (D-61: NANO_AIU_PER_AIU in Copilot CLI 1.0.112); null when nanoAiu is null." }
+          }
+        },
+        "calls": {
+          "type": "object", "additionalProperties": false,
+          "required": ["total", "failed", "rateLimited"],
+          "properties": { "total": { "$ref": "#/$defs/Count" }, "failed": { "$ref": "#/$defs/Count" }, "rateLimited": { "$ref": "#/$defs/Count" } }
+        },
+        "latency": {
+          "type": "object", "additionalProperties": false,
+          "required": ["ttftP50Ms", "ttftP95Ms", "durationP50Ms"],
+          "properties": { "ttftP50Ms": { "$ref": "#/$defs/NullableMs" }, "ttftP95Ms": { "$ref": "#/$defs/NullableMs" }, "durationP50Ms": { "$ref": "#/$defs/NullableMs" } }
+        },
+        "errors": {
+          "type": "object", "additionalProperties": false,
+          "required": ["count", "lastType"],
+          "properties": { "count": { "$ref": "#/$defs/Count" }, "lastType": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/ShortName" }] } }
+        },
+        "tools": {
+          "type": "array", "maxItems": 50,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["name", "runs", "failed", "p50Ms", "maxMs"],
+            "properties": {
+              "name": { "$ref": "#/$defs/ShortName" }, "runs": { "$ref": "#/$defs/Count" }, "failed": { "$ref": "#/$defs/Count" },
+              "p50Ms": { "$ref": "#/$defs/NullableMs" }, "maxMs": { "$ref": "#/$defs/NullableMs" }
+            }
+          }
+        },
+        "permissions": {
+          "type": "object", "additionalProperties": false,
+          "required": ["requested", "approved", "denied", "pending", "waitedMs", "pendingSince"],
+          "properties": {
+            "requested": { "$ref": "#/$defs/Count" }, "approved": { "$ref": "#/$defs/Count" },
+            "denied": { "$ref": "#/$defs/Count" }, "pending": { "$ref": "#/$defs/Count" },
+            "waitedMs": { "$ref": "#/$defs/Count", "description": "Sum of requested -> completed time." },
+            "pendingSince": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/Instant" }] }
+          }
+        },
+        "input": {
+          "type": "object", "additionalProperties": false,
+          "required": ["requested", "waitedMs", "pendingSince"],
+          "properties": {
+            "requested": { "$ref": "#/$defs/Count" }, "waitedMs": { "$ref": "#/$defs/Count" },
+            "pendingSince": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/Instant" }] }
+          }
+        },
+        "subagents": {
+          "type": "array", "maxItems": 20,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["name", "model", "modelMatches", "durationMs", "failed"],
+            "properties": {
+              "name": { "$ref": "#/$defs/ShortName" },
+              "model": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/ShortName" }] },
+              "modelMatches": { "type": ["boolean", "null"] },
+              "durationMs": { "$ref": "#/$defs/NullableMs" },
+              "failed": { "type": "boolean" }
+            }
+          }
+        },
+        "compaction": {
+          "type": "object", "additionalProperties": false,
+          "required": ["count", "tokens"],
+          "properties": { "count": { "$ref": "#/$defs/Count" }, "tokens": { "type": ["integer", "null"], "minimum": 0 } }
+        },
+        "rewinds": { "$ref": "#/$defs/Count" },
+        "truncations": { "$ref": "#/$defs/Count" },
+        "warnings": { "$ref": "#/$defs/Count" },
+        "codeChanges": {
+          "oneOf": [
+            { "type": "null" },
+            { "type": "object", "additionalProperties": false, "required": ["linesAdded", "linesRemoved"],
+              "properties": { "linesAdded": { "$ref": "#/$defs/Count" }, "linesRemoved": { "$ref": "#/$defs/Count" } } }
+          ]
+        },
+        "task": {
+          "oneOf": [
+            { "type": "null" },
+            { "type": "object", "additionalProperties": false, "required": ["success", "outcome"],
+              "properties": { "success": { "type": ["boolean", "null"] }, "outcome": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/ShortName" }] } } }
+          ]
+        },
+        "recentCalls": {
+          "type": "array", "maxItems": 120, "description": "Newest last.",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["at", "model", "input", "output", "failed", "subagent"],
+            "properties": {
+              "at": { "$ref": "#/$defs/Instant" },
+              "model": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/ShortName" }] },
+              "input": { "$ref": "#/$defs/Count" }, "output": { "$ref": "#/$defs/Count" },
+              "failed": { "type": "boolean" }, "subagent": { "type": "boolean" }
+            }
+          }
+        },
+        "unknownEvents": { "$ref": "#/$defs/Count", "description": "Lines whose type the fold does not know (format drift)." }
+      }
+    },
+    "RestoreReason": {
+      "enum": [
+        "remote_session", "no_window_found", "wayland_unsupported_compositor",
+        "gnome_extension_missing", "macos_accessibility_denied", "macos_automation_denied",
+        "vscode_bridge_missing", "vscode_window_unbound", "tab_not_addressable",
+        "multiplexer_detached", "process_ended", "platform_error", "target_elevated"
+      ],
+      "description": "Why capability is below 'full'. Each has a fix-it text in DESIGN.md section 6."
+    },
+    "FocusResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "code", "detail", "at"],
+      "properties": {
+        "status": { "enum": ["ok", "partial", "failed"] },
+        "code": {
+          "enum": [
+            "focused", "focused_window_only", "flashed", "not_found", "unsupported",
+            "permission_denied", "timeout", "rate_limited", "error"
+          ]
+        },
+        "detail": { "type": "string", "maxLength": 200 },
+        "at": { "$ref": "#/$defs/Instant" }
+      },
+      "description": "status ok <=> code focused. status partial <=> code focused_window_only or flashed. Everything else is failed."
+    }
+  }
+}

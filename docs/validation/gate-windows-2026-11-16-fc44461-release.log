@@ -1,0 +1,30 @@
+$ node scripts/release.mjs
+$ node scripts/gate.mjs m5
+STAGE toolchain PASS 719ms  node v24.15.0 pnpm 11.2.2 git 2.53.0.windows.3
+STAGE stubs PASS 446ms
+STAGE typecheck PASS 1982ms
+STAGE lint PASS 3444ms
+STAGE contracts PASS 2081ms
+STAGE platform-fake PASS 2100ms
+STAGE gate-self PASS 3963ms
+STAGE core PASS 1919ms
+STAGE process PASS 1866ms
+STAGE daemon PASS 4385ms
+STAGE hook PASS 6234ms
+STAGE integration PASS 10350ms
+STAGE ui-unit PASS 3515ms
+STAGE ui-build PASS 1749ms
+STAGE e2e PASS 69044ms
+STAGE platform-unit PASS 1985ms
+STAGE os PASS 8472ms
+STAGE cli PASS 11188ms
+STAGE vscode PASS 2885ms
+STAGE system PASS 7017ms
+STAGE budget PASS 18868ms
+STAGE package PASS 19219ms
+STAGE audit PASS 443ms  ids 533/533 (os=windows), skipped 0
+GATE m5 PASS 23/23
+PACKAGE mission-control-desktop-1.0.1.tgz 741923
+(node:26208) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+RELEASE 1.0.1 C:\Users\you\Workspace\.worktrees\mission-control\check-integration\release

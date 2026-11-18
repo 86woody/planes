@@ -1,0 +1,10 @@
+{
+  "origin": {"os":"windows","env":{},"ancestry":[{"pid":6200,"name":"claude.exe","startTime":"133000000000000200"},{"pid":6100,"name":"node.exe","startTime":"133000000000000150"},{"pid":6000,"name":"alacritty.exe","startTime":"133000000000000100"}],"console":null},
+  "host": {"kind":"unknown","app":null,"display":"win32","multiplexer":null,"os":"windows"},
+  "windows": [
+    {"hwnd":"0x0000000000000D01","pid":6100,"exe":"node.exe","className":"Chrome_WidgetWin_1","title":"","visible":true,"owner":null,"rootOwner":null,"elevated":false},
+    {"hwnd":"0x0000000000000D02","pid":6000,"exe":"alacritty.exe","className":"Window Class","title":"alacritty","visible":true,"owner":null,"rootOwner":null,"elevated":false},
+    {"hwnd":"0x0000000000000D03","pid":6000,"exe":"alacritty.exe","className":"Popup","title":"tooltip","visible":true,"owner":"0x0000000000000D02","rootOwner":"0x0000000000000D02","elevated":false}
+  ],
+  "lookup": []
+}

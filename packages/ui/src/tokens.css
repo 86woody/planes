@@ -1,0 +1,117 @@
+/* DESIGN.md 1. Two signal colours only: --go (fine) and --look (needs you or over a
+   threshold). Nothing else on the page carries a hue. Dark warm graphite is the default;
+   light "bone" follows prefers-color-scheme: light, and the theme button overrides both. */
+:root {
+  color-scheme: dark;
+  /* surfaces */
+  --bg: #0c0b0a;
+  --bg2: #161412;
+  --card: rgba(30,28,25,.52);
+  --solid: #1c1a18;
+  --card2: rgba(30,28,26,.94);
+  --card3: rgba(40,37,33,.5);
+  /* hairlines */
+  --hair: rgba(236,230,218,.07);
+  --hair2: rgba(236,230,218,.13);
+  --hair3: rgba(236,230,218,.26);
+  /* ink; --ink3 is the dimmest text (4.5:1 on every surface), --ink4 is never text */
+  --ink: #ece7dc;
+  --ink2: #a9a398;
+  --ink3: #8f897f;
+  --ink4: #47433e;
+  /* signals */
+  --go: #46cf8c;
+  --look: #ff8a3b;
+  --go-bg: rgba(70,207,140,.09);
+  --look-bg: rgba(255,138,59,.08);
+  --look-line: rgba(255,138,59,.4);
+  --shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 26px 50px -32px rgba(0,0,0,.95);
+  /* terrain canvas */
+  --c-ink: #ece7dc;
+  --c-ink2: #a9a398;
+  --c-ink3: #706b62;
+  --c-grid: #ece7dc;
+  --c-go: #46cf8c;
+  --c-look: #ff8a3b;
+  --c-paper: #121110;
+  --c-gridk: .22;
+  --c-glow: 1;
+  /* type */
+  --sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, Consolas, monospace;
+  /* shape and layout */
+  --r: 20px;
+  --r-hero: 24px;
+  --side: 352px;
+  --gap: 16px;
+  --tele-h: 138px;
+  /* motion */
+  --dur: 200ms;
+  --pulse: 2400ms;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #e7e2d5;
+    --bg2: #efebe1;
+    --card: rgba(250,248,242,.62);
+    --solid: #f8f5ee;
+    --card2: rgba(252,251,247,.9);
+    --card3: rgba(236,231,219,.55);
+    --hair: rgba(28,30,32,.10);
+    --hair2: rgba(28,30,32,.18);
+    --hair3: rgba(28,30,32,.32);
+    --ink: #1b1d1f;
+    --ink2: #4c4d4c;
+    --ink3: #6b675e;
+    --ink4: #b2ac9e;
+    --go: #1a6a43;
+    --look: #9c4209;
+    --go-bg: rgba(26,106,67,.09);
+    --look-bg: rgba(156,66,9,.08);
+    --look-line: rgba(156,66,9,.38);
+    --shadow: 0 1px 0 rgba(255,255,255,.75) inset, 0 22px 44px -30px rgba(60,44,16,.42);
+    --c-ink: #1b1d1f;
+    --c-ink2: #4c4d4c;
+    --c-ink3: #857f72;
+    --c-grid: #2a2724;
+    --c-go: #1a6a43;
+    --c-look: #b34d0b;
+    --c-paper: #f3efe6;
+    --c-gridk: .30;
+    --c-glow: .55;
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #e7e2d5;
+  --bg2: #efebe1;
+  --card: rgba(250,248,242,.62);
+  --solid: #f8f5ee;
+  --card2: rgba(252,251,247,.9);
+  --card3: rgba(236,231,219,.55);
+  --hair: rgba(28,30,32,.10);
+  --hair2: rgba(28,30,32,.18);
+  --hair3: rgba(28,30,32,.32);
+  --ink: #1b1d1f;
+  --ink2: #4c4d4c;
+  --ink3: #6b675e;
+  --ink4: #b2ac9e;
+  --go: #1a6a43;
+  --look: #9c4209;
+  --go-bg: rgba(26,106,67,.09);
+  --look-bg: rgba(156,66,9,.08);
+  --look-line: rgba(156,66,9,.38);
+  --shadow: 0 1px 0 rgba(255,255,255,.75) inset, 0 22px 44px -30px rgba(60,44,16,.42);
+  --c-ink: #1b1d1f;
+  --c-ink2: #4c4d4c;
+  --c-ink3: #857f72;
+  --c-grid: #2a2724;
+  --c-go: #1a6a43;
+  --c-look: #b34d0b;
+  --c-paper: #f3efe6;
+  --c-gridk: .30;
+  --c-glow: .55;
+}

@@ -1,0 +1,9 @@
+{
+  "sessionId": "cp-fixture-2",
+  "timestamp": 1794000000000,
+  "cwd": "C:\\Fixtures\\project",
+  "toolName": "edit",
+  "toolArgs": {
+    "path": "a.ts"
+  }
+}

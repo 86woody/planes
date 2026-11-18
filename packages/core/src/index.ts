@@ -1,0 +1,11 @@
+export { reduce } from "./attention.js";
+export type { ReducerOptions, CoreEvent, SessionCursor } from "./attention.js";
+export { decide, decideRenotify, Coalescer } from "./notify-policy.js";
+export type { NotifyContext, NotifyDecision } from "./notify-policy.js";
+export { classifyHost, VSCODE_NAMES, SHELL_NAMES, LINUX_TERMINALS } from "./classify.js";
+export { CallsignAllocator } from "./callsign.js";
+export { summarize } from "./summary.js";
+export { createCopilotFold, aiCreditsOf, NANO_AIU_PER_AI_CREDIT } from "./telemetry.js";
+export type { CopilotFold } from "./telemetry.js";
+export { createClaudeFold, claudeContextWindow } from "./claude-telemetry.js";
+export type { ClaudeFold, SubagentInfo, SpanRecord } from "./claude-telemetry.js";

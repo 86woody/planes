@@ -1,0 +1,1 @@
+0:0: execution error: System Events got an error: osascript is not allowed assistive access. (-25211)

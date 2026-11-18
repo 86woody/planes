@@ -1,0 +1,9 @@
+{
+  "session_id": "cp-fixture-1",
+  "timestamp": "2026-11-12T20:15:30.000Z",
+  "cwd": "C:\\Fixtures\\project",
+  "hook_event_name": "Stop",
+  "transcript_path": "C:\\Fixtures\\t.jsonl",
+  "stop_reason": "end_turn",
+  "stop_hook_active": false
+}

@@ -1,0 +1,7 @@
+{
+  "session.schema.json": "6837608e5849a6c720162cce3fd63b41adb2fbebbca8a48be890233fc8610dc8",
+  "ingest.schema.json": "943af142470d16db66f47eba2a540d666ccd7abaed269a6257deb7d3edc72be4",
+  "api.schema.json": "8b90dd4ceffc462ad738b5b691fdd1d91cb2fb1fead06803c01c8f59eab79ab1",
+  "config.schema.json": "8d30ad555a5ec843ce7ec479edaca4b79bc505cd3d73ad04a93e38416f6026fc",
+  "bridge.schema.json": "cb241bcc819bb1b920bd65656646ea7913ac8a71b6fee857b8de5f82aea39b97"
+}

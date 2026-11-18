@@ -1,0 +1,1 @@
+Mission control: a local control plane that shows every agent and terminal session on this machine as a launch-console card in the browser, restores (focuses and maximizes) any session window whether it lives in VS Code or a shell, and raises an OS notification when a session needs attention. Windows, Linux and macOS. Planning phase: specs only, no code yet.

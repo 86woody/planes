@@ -1,0 +1,29 @@
+$ node scripts/gate.mjs m5
+STAGE toolchain PASS 1711ms  node v22.22.1 pnpm 11.2.2 git 2.53.0
+STAGE stubs PASS 882ms
+STAGE typecheck PASS 5577ms
+STAGE lint PASS 3282ms
+STAGE contracts PASS 2224ms
+STAGE platform-fake PASS 2085ms
+STAGE gate-self PASS 5951ms
+STAGE core PASS 2070ms
+STAGE process PASS 2125ms
+STAGE daemon PASS 4444ms
+STAGE hook PASS 6700ms
+STAGE integration PASS 10898ms
+STAGE ui-unit PASS 2407ms
+STAGE ui-build PASS 1781ms
+STAGE e2e PASS 67309ms
+STAGE platform-unit PASS 2378ms
+dbus-daemon[129188]: [session uid=1000 pid=129188 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=143377 comm="tmux -S /tmp/mc-tmux-kltFUH/sock new-session -d -s" label="kernel")
+dbus-daemon[129188]: [session uid=1000 pid=129188 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[129188]: [session uid=1000 pid=129188 pidfd=5] Activating service name='org.freedesktop.systemd1' requested by ':1.5' (uid=1000 pid=143379 comm="tmux -S /tmp/mc-tmux-kltFUH/sock new-session -d -s" label="kernel")
+dbus-daemon[129188]: [session uid=1000 pid=129188 pidfd=5] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+STAGE os PASS 3002ms
+STAGE cli PASS 6884ms
+STAGE vscode PASS 2453ms
+STAGE system PASS 7237ms
+STAGE budget PASS 17287ms
+STAGE package PASS 26735ms
+STAGE audit PASS 885ms  ids 512/512 (os=linux), skipped 0
+GATE m5 PASS 23/23

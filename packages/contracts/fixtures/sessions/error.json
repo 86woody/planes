@@ -1,0 +1,48 @@
+{
+  "id": "claude-code:fixture-error",
+  "adapter": "claude-code",
+  "nativeId": "fixture-error",
+  "callsign": "MC-06",
+  "title": "Fixture session",
+  "cwd": "C:Fixturesproject",
+  "project": "project",
+  "branch": "main",
+  "state": "error",
+  "attention": {
+    "active": true,
+    "reason": "error",
+    "since": "2026-11-12T09:05:00.000Z",
+    "acknowledged": false,
+    "message": "API error: rate limited"
+  },
+  "startedAt": "2026-11-12T08:00:00.000Z",
+  "updatedAt": "2026-11-12T09:05:00.000Z",
+  "lastEvent": {
+    "name": "StopFailure",
+    "at": "2026-11-12T09:05:00.000Z",
+    "summary": "Stopped: API error"
+  },
+  "process": {
+    "agentPid": 3131,
+    "alive": true
+  },
+  "host": {
+    "kind": "windows-terminal",
+    "app": "WindowsTerminal.exe",
+    "os": "windows",
+    "display": "win32",
+    "multiplexer": null
+  },
+  "restore": {
+    "capability": "full",
+    "reason": null,
+    "lastResult": null
+  },
+  "stats": {
+    "prompts": 2,
+    "tools": 5,
+    "notifications": 0,
+    "events": 12
+  },
+  "endReason": null
+}

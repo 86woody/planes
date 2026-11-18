@@ -1,0 +1,65 @@
+/* DESIGN.md 3a, list view telemetry columns (D-58). */
+
+@media (max-width: 1179px) {
+  .listv .hw {
+    display: none;
+  }
+}
+
+@media (max-width: 759px) {
+  .listv .ht {
+    display: none;
+  }
+}
+
+.listv .over {
+  color: var(--look);
+}
+
+.listv .na {
+  color: var(--ink3);
+}
+
+.listv .sorth {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.listv .sorth:focus-visible {
+  outline: 2px solid var(--ink2);
+  outline-offset: 2px;
+}
+
+/* D-58 follow-up: with the five telemetry columns the long attention text made rows tall and
+   pushed the table past the card. One line, ellipsis; the full text is the cell's title. */
+.listv td.wrapc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+  min-width: 140px;
+}
+
+/* The Restore capability column hides below 1600px: the Restore button and the sheet carry it. */
+@media (max-width: 1599px) {
+  .listv .hr {
+    display: none;
+  }
+}
+
+/* D-58 follow-up: the list view takes the full main row (the side column only repeats the
+   Needs you stack, and the list is already sorted by who needs you). */
+.main.listing { grid-template-columns: minmax(0, 1fr); }
+.main.listing > .side { display: none; }
+
+/* Long branches and attention text stay on one line. */
+.listv td [data-testid="branch"] { max-width: 140px; overflow: hidden; text-overflow: ellipsis; }
+
+
+
+/* Links styled as buttons (Open, Open session) are not underlined. */
+.listv a.btn, .sheet a.btn { text-decoration: none; }

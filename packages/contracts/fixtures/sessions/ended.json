@@ -1,0 +1,48 @@
+{
+  "id": "claude-code:fixture-ended",
+  "adapter": "claude-code",
+  "nativeId": "fixture-ended",
+  "callsign": "MC-07",
+  "title": "Fixture session",
+  "cwd": "C:Fixturesproject",
+  "project": "project",
+  "branch": "main",
+  "state": "ended",
+  "attention": {
+    "active": false,
+    "reason": null,
+    "since": null,
+    "acknowledged": false,
+    "message": null
+  },
+  "startedAt": "2026-11-12T08:00:00.000Z",
+  "updatedAt": "2026-11-12T09:06:00.000Z",
+  "lastEvent": {
+    "name": "SessionEnd",
+    "at": "2026-11-12T09:06:00.000Z",
+    "summary": "Session ended"
+  },
+  "process": {
+    "agentPid": 3131,
+    "alive": false
+  },
+  "host": {
+    "kind": "windows-terminal",
+    "app": "WindowsTerminal.exe",
+    "os": "windows",
+    "display": "win32",
+    "multiplexer": null
+  },
+  "restore": {
+    "capability": "none",
+    "reason": "process_ended",
+    "lastResult": null
+  },
+  "stats": {
+    "prompts": 2,
+    "tools": 5,
+    "notifications": 0,
+    "events": 12
+  },
+  "endReason": "prompt_input_exit"
+}

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mission-control.local/contracts/bridge.schema.json",
+  "title": "DaemonBridge",
+  "description": "VS Code bridge WebSocket messages (vscode-bridge.md sections 2-3). Transcribed from that file; each $defs entry is one named type.",
+  "$defs": {
+    "BridgeHello": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "protocol", "windowId", "extHostPid", "appName", "workspaceName", "workspaceFolders", "remoteName", "focused"],
+      "properties": {
+        "type": { "const": "hello" },
+        "protocol": { "const": 1 },
+        "windowId": { "type": "string", "minLength": 1, "description": "uuid-v4, generated once per extension activation." },
+        "extHostPid": { "type": "integer", "minimum": 1 },
+        "appName": { "type": "string" },
+        "workspaceName": { "type": ["string", "null"] },
+        "workspaceFolders": { "type": "array", "items": { "type": "string" } },
+        "remoteName": { "type": ["string", "null"] },
+        "focused": { "type": "boolean" }
+      }
+    },
+    "BridgeTerminalInfo": {
+      "type": "object", "additionalProperties": false,
+      "required": ["terminalId", "name", "shellPid", "active"],
+      "properties": {
+        "terminalId": { "type": "string", "minLength": 1 },
+        "name": { "type": "string" },
+        "shellPid": { "type": ["integer", "null"], "minimum": 1 },
+        "active": { "type": "boolean" }
+      }
+    },
+    "BridgeTerminals": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "terminals"],
+      "properties": {
+        "type": { "const": "terminals" },
+        "terminals": { "type": "array", "items": { "$ref": "#/$defs/BridgeTerminalInfo" } }
+      }
+    },
+    "BridgeWindowState": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "focused"],
+      "properties": {
+        "type": { "const": "windowState" },
+        "focused": { "type": "boolean" }
+      }
+    },
+    "BridgeResult": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "requestId", "ok", "detail"],
+      "properties": {
+        "type": { "const": "result" },
+        "requestId": { "type": "string", "minLength": 1 },
+        "ok": { "type": "boolean" },
+        "detail": { "type": "string" }
+      }
+    },
+    "BridgeClientMessage": {
+      "oneOf": [
+        { "$ref": "#/$defs/BridgeHello" },
+        { "$ref": "#/$defs/BridgeTerminals" },
+        { "$ref": "#/$defs/BridgeWindowState" },
+        { "$ref": "#/$defs/BridgeResult" }
+      ]
+    },
+    "BridgeWelcome": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "protocol"],
+      "properties": {
+        "type": { "const": "welcome" },
+        "protocol": { "const": 1 }
+      }
+    },
+    "BridgeFocusTerminal": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "requestId", "terminalId", "maximizePanel"],
+      "properties": {
+        "type": { "const": "focusTerminal" },
+        "requestId": { "type": "string", "minLength": 1 },
+        "terminalId": { "type": "string", "minLength": 1 },
+        "maximizePanel": { "type": "boolean" }
+      }
+    },
+    "BridgeFocusAgentPanel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["type", "requestId", "adapter"],
+      "properties": {
+        "type": { "const": "focusAgentPanel" },
+        "requestId": { "type": "string", "minLength": 1 },
+        "adapter": { "type": "string", "minLength": 1 }
+      }
+    },
+    "BridgeServerMessage": {
+      "oneOf": [
+        { "$ref": "#/$defs/BridgeWelcome" },
+        { "$ref": "#/$defs/BridgeFocusTerminal" },
+        { "$ref": "#/$defs/BridgeFocusAgentPanel" }
+      ]
+    }
+  }
+}

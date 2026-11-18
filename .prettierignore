@@ -1,0 +1,12 @@
+node_modules
+dist
+.gate
+test-results
+playwright-report
+package-lock.json
+docs
+*.md
+packages/contracts/src/generated
+packages/contracts/schemas
+packages/contracts/fixtures
+release

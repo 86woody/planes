@@ -1,0 +1,27 @@
+{
+  "stages": [
+    { "name": "toolchain", "kind": "cmd", "cmd": "node scripts/check-toolchain.mjs", "first": "m0" },
+    { "name": "stubs", "kind": "cmd", "cmd": "node scripts/check-stubs.mjs", "first": "m0" },
+    { "name": "typecheck", "kind": "cmd", "cmd": "npm run typecheck", "first": "m0" },
+    { "name": "lint", "kind": "cmd", "cmd": "eslint . --max-warnings 0", "first": "m0" },
+    { "name": "contracts", "kind": "vitest", "cmd": "vitest run --project contracts", "first": "m0" },
+    { "name": "platform-fake", "kind": "vitest", "cmd": "vitest run --project platform-fake", "first": "m0" },
+    { "name": "gate-self", "kind": "vitest", "cmd": "vitest run --project scripts", "first": "m0" },
+    { "name": "core", "kind": "vitest", "cmd": "vitest run --project core", "first": "m1" },
+    { "name": "process", "kind": "vitest", "cmd": "vitest run --project platform packages/platform/test/process.test.ts", "first": "m1" },
+    { "name": "daemon", "kind": "vitest", "cmd": "vitest run --project daemon", "first": "m1" },
+    { "name": "hook", "kind": "vitest", "pre": ["npm run build -w @mc/contracts -w @mc/platform -w @mc/hook"], "cmd": "vitest run --project hook", "first": "m1" },
+    { "name": "integration", "kind": "vitest", "pre": ["npm run build -w @mc/contracts -w @mc/platform -w @mc/core -w @mc/hook -w @mc/daemon"], "cmd": "vitest run --project daemon-integration", "first": "m1" },
+    { "name": "ui-unit", "kind": "vitest", "cmd": "vitest run --project ui", "first": "m2" },
+    { "name": "ui-build", "kind": "cmd", "cmd": "npm run build -w @mc/ui", "first": "m2" },
+    { "name": "e2e", "kind": "playwright", "cmd": "playwright test e2e/golden-path.spec.ts e2e/card.spec.ts e2e/design.spec.ts e2e/a11y.spec.ts", "first": "m2" },
+    { "name": "platform-unit", "kind": "vitest", "cmd": "vitest run --project platform", "first": "m3" },
+    { "name": "os", "kind": "vitest", "cmd": "MC_OS_TESTS=1 vitest run --project platform-os", "first": "m3" },
+    { "name": "cli", "kind": "vitest", "cmd": "vitest run --project cli", "first": "m4" },
+    { "name": "vscode", "kind": "vitest", "cmd": "vitest run --project vscode-bridge", "first": "m4" },
+    { "name": "system", "kind": "playwright", "pre": ["npm run build"], "cmd": "playwright test e2e/system.spec.ts", "first": "m4" },
+    { "name": "budget", "kind": "vitest", "cmd": "vitest run --project budget", "first": "m5" },
+    { "name": "package", "kind": "vitest", "pre": ["npm run build", "npm run package"], "cmd": "vitest run --project packaging", "first": "m5" },
+    { "name": "audit", "kind": "cmd", "cmd": "node scripts/check-test-ids.mjs --gate <gate> --reports <reports>", "first": "m0" }
+  ]
+}

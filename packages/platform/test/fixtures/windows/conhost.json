@@ -1,0 +1,6 @@
+{
+  "origin": {"os":"windows","env":{},"ancestry":[{"pid":4100,"name":"cmd.exe","startTime":"133000000000000001"},{"pid":4090,"name":"conhost.exe","startTime":"133000000000000000"}],"console":{"consoleHwnd":"0x00000000000A1B2C","ownerHwnd":null}},
+  "host": {"kind":"conhost","app":"conhost.exe","display":"win32","multiplexer":null,"os":"windows"},
+  "windows": [{"hwnd":"0x00000000000A1B2C","pid":4090,"exe":"conhost.exe","className":"ConsoleWindowClass","title":"C:\\WINDOWS\\system32\\cmd.exe","visible":true,"owner":null,"rootOwner":null,"elevated":false}],
+  "lookup": []
+}

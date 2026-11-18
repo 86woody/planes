@@ -1,0 +1,5 @@
+0x01e00003  0 4321   xterm.XTerm                    host1 MC-TEST shell window
+0x02400007  0 4500   code.Code                      host1 project-x - Visual Studio Code
+0x03a00003  0 500    gnome-terminal.Gnome-terminal  host1 bash — project-x
+0x03a00010  0 500    gnome-terminal.Gnome-terminal  host1 bash — other
+0x03a00020 -1 500    gnome-terminal.Gnome-terminal  host1 htop

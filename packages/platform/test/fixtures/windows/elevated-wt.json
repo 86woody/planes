@@ -1,0 +1,8 @@
+{
+  "origin": {"os":"windows","env":{"WT_SESSION":"f3a1"},"ancestry":[{"pid":5100,"name":"claude.exe","startTime":"133000000000000100"},{"pid":5000,"name":"WindowsTerminal.exe","startTime":"133000000000000010"}],"console":{"consoleHwnd":null,"ownerHwnd":"0x0000000000000C01"}},
+  "host": {"kind":"windows-terminal","app":"WindowsTerminal.exe","display":"win32","multiplexer":null,"os":"windows"},
+  "windows": [],
+  "lookup": [
+    {"hwnd":"0x0000000000000C01","pid":5000,"exe":"WindowsTerminal.exe","className":"CASCADIA_HOSTING_WINDOW_CLASS","title":"Admin","visible":true,"owner":null,"rootOwner":null,"elevated":true}
+  ]
+}

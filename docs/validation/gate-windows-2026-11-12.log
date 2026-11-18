@@ -1,0 +1,24 @@
+$ node scripts/gate.mjs m5
+STAGE toolchain PASS 666ms  node v24.15.0 pnpm 11.2.2 git 2.53.0.windows.3
+STAGE stubs PASS 374ms
+STAGE typecheck PASS 1572ms
+STAGE lint PASS 2562ms
+STAGE contracts PASS 1579ms
+STAGE platform-fake PASS 1463ms
+STAGE gate-self PASS 2923ms
+STAGE core PASS 1495ms
+STAGE process PASS 1531ms
+STAGE daemon PASS 4007ms
+STAGE hook PASS 4890ms
+STAGE integration PASS 9705ms
+STAGE ui-unit PASS 2188ms
+STAGE ui-build PASS 1242ms
+STAGE e2e PASS 62248ms
+STAGE platform-unit PASS 1626ms
+STAGE os PASS 6568ms
+STAGE cli PASS 7489ms
+STAGE vscode PASS 1975ms
+STAGE system PASS 5519ms
+STAGE budget PASS 17910ms
+STAGE audit PASS 344ms  ids 384/384 (os=windows), skipped 0
+GATE m5 PASS 22/22

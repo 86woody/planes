@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mission-control.local/contracts/api.schema.json",
+  "title": "DaemonApi",
+  "description": "Request and response bodies of the daemon HTTP and WebSocket API (api.md). Each $defs entry is one named type.",
+  "$defs": {
+    "Health": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "pid", "version"],
+      "properties": { "ok": { "const": true }, "pid": { "type": "integer" }, "version": { "type": "string" } }
+    },
+    "Error": {
+      "type": "object", "additionalProperties": false, "required": ["error"],
+      "properties": {
+        "error": {
+          "type": "object", "additionalProperties": false, "required": ["code", "message"],
+          "properties": {
+            "code": { "enum": ["bad_host", "forbidden", "unauthorized", "not_found", "invalid_envelope", "invalid_request", "rate_limited", "pair_expired", "internal"] },
+            "message": { "type": "string", "maxLength": 300 }
+          }
+        }
+      }
+    },
+    "PairRequest": {
+      "type": "object", "additionalProperties": false, "required": ["code"],
+      "properties": { "code": { "type": "string", "pattern": "^[0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{4}-?[0-9A-HJKMNP-TV-Za-hjkmnp-tv-z]{4}$", "description": "8 Crockford base32 characters, optional dash, case-insensitive; normalised to upper case without the dash." } }
+    },
+    "PairResponse": {
+      "type": "object", "additionalProperties": false, "required": ["csrf"],
+      "properties": { "csrf": { "type": "string", "pattern": "^[A-Za-z0-9_-]{43}$" } }
+    },
+    "PairCodeResponse": {
+      "type": "object", "additionalProperties": false, "required": ["code", "expiresAt"],
+      "properties": { "code": { "type": "string", "pattern": "^[0-9A-HJKMNP-TV-Z]{4}-[0-9A-HJKMNP-TV-Z]{4}$" }, "expiresAt": { "type": "string", "format": "date-time" } }
+    },
+    "Capabilities": {
+      "type": "object", "additionalProperties": false,
+      "required": ["os", "display", "focus", "notify", "notifyClick", "issues"],
+      "properties": {
+        "os": { "enum": ["windows", "macos", "linux"] },
+        "display": { "enum": ["win32", "cocoa", "x11", "wayland", null] },
+        "focus": { "enum": ["full", "window", "none"] },
+        "notify": { "type": "boolean" },
+        "notifyClick": { "type": "boolean", "description": "Clicking an OS notification restores the session." },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["code", "severity", "message", "fix"],
+            "properties": {
+              "code": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+              "severity": { "enum": ["info", "warn", "error"] },
+              "message": { "type": "string", "maxLength": 200 },
+              "fix": { "type": "string", "maxLength": 300 }
+            }
+          }
+        }
+      }
+    },
+    "DaemonInfo": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pid", "version", "startedAt", "port", "configOk", "configError", "bridges"],
+      "properties": {
+        "pid": { "type": "integer" },
+        "version": { "type": "string" },
+        "startedAt": { "type": "string", "format": "date-time" },
+        "port": { "type": "integer" },
+        "configOk": { "type": "boolean" },
+        "configError": { "type": ["string", "null"], "maxLength": 300 },
+        "bridges": { "type": "integer", "minimum": 0, "description": "Connected VS Code bridge windows." },
+        "copilot": {
+          "description": "D-56. Copilot account telemetry from the Copilot SDK. Absent or null when the SDK is off or has not answered yet.",
+          "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/CopilotAccount" }]
+        }
+      }
+    },
+    "CopilotAccount": {
+      "type": "object", "additionalProperties": false,
+      "required": ["updatedAt", "runtimeVersion", "planTier", "quota", "nanoAiuToday", "aiCreditsToday", "forecastPct", "error"],
+      "properties": {
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "runtimeVersion": { "type": ["string", "null"], "maxLength": 32 },
+        "planTier": { "type": ["string", "null"], "maxLength": 64 },
+        "quota": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object", "additionalProperties": false,
+              "required": ["entitlement", "used", "remainingPct", "resetDate", "unlimited"],
+              "properties": {
+                "entitlement": { "type": ["number", "null"], "minimum": 0 },
+                "used": { "type": ["number", "null"], "minimum": 0 },
+                "remainingPct": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+                "resetDate": { "type": ["string", "null"], "maxLength": 40 },
+                "unlimited": { "type": ["boolean", "null"] }
+              }
+            }
+          ]
+        },
+        "nanoAiuToday": { "type": "integer", "minimum": 0, "description": "Sum over sessions updated today (local date) of telemetry.credits.nanoAiu." },
+        "aiCreditsToday": { "type": ["number", "null"], "minimum": 0, "description": "nanoAiuToday / 1e9 (D-61)." },
+        "forecastPct": { "type": ["number", "null"], "minimum": 0, "description": "Projected percent of the entitlement used at resetDate, at the burn rate of the last 7 days." },
+        "error": { "type": ["string", "null"], "maxLength": 200, "description": "Why the SDK could not answer; never contains a token." }
+      }
+    },
+    "TraceSpan": {
+      "type": "object", "additionalProperties": false,
+      "required": ["spanId", "parentSpanId", "kind", "name", "startedAt", "durationMs", "status", "model", "tool", "inputTokens", "outputTokens", "ttftMs", "serverMs", "events"],
+      "properties": {
+        "spanId": { "type": "string", "maxLength": 64 },
+        "parentSpanId": { "type": ["string", "null"], "maxLength": 64 },
+        "kind": { "enum": ["agent", "chat", "compaction", "tool", "skill", "other"], "description": "invoke_agent -> agent; chat (request.type compaction -> compaction); execute_tool -> tool (skill when gen_ai.skill.name is set); else other." },
+        "name": { "type": "string", "maxLength": 96, "description": "The span name as Copilot writes it (e.g. 'chat claude-sonnet-5.5', 'execute_tool powershell')." },
+        "startedAt": { "type": "string", "format": "date-time" },
+        "durationMs": { "type": ["number", "null"], "minimum": 0 },
+        "status": { "enum": ["ok", "error", "unset"] },
+        "model": { "type": ["string", "null"], "maxLength": 64 },
+        "tool": { "type": ["string", "null"], "maxLength": 64, "description": "gen_ai.tool.name, or gen_ai.skill.name for a skill span." },
+        "inputTokens": { "type": ["integer", "null"], "minimum": 0 },
+        "outputTokens": { "type": ["integer", "null"], "minimum": 0 },
+        "ttftMs": { "type": ["number", "null"], "minimum": 0 },
+        "serverMs": { "type": ["number", "null"], "minimum": 0 },
+        "events": {
+          "type": "array", "maxItems": 20,
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["name", "at"],
+            "properties": { "name": { "type": "string", "maxLength": 64 }, "at": { "type": "string", "format": "date-time" } }
+          }
+        }
+      }
+    },
+    "TraceRun": {
+      "type": "object", "additionalProperties": false,
+      "required": ["traceId", "startedAt", "durationMs", "status", "agent", "nanoAiu", "turnCount", "complete", "spans", "droppedSpans"],
+      "properties": {
+        "traceId": { "type": "string", "maxLength": 64 },
+        "startedAt": { "type": "string", "format": "date-time" },
+        "durationMs": { "type": ["number", "null"], "minimum": 0 },
+        "status": { "enum": ["ok", "error", "unset"] },
+        "agent": { "type": ["string", "null"], "maxLength": 64, "description": "github.copilot.agent.type or the root span's agent name." },
+        "nanoAiu": { "type": ["integer", "null"], "minimum": 0 },
+        "turnCount": { "type": ["integer", "null"], "minimum": 0 },
+        "complete": { "type": "boolean", "description": "true once the root invoke_agent span has arrived." },
+        "spans": { "type": "array", "maxItems": 500, "items": { "$ref": "#/$defs/TraceSpan" }, "description": "Sorted by startedAt; the root first." },
+        "droppedSpans": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "TracesResponse": {
+      "type": "object", "additionalProperties": false, "required": ["sessionId", "runs"],
+      "properties": {
+        "sessionId": { "type": "string", "maxLength": 160 },
+        "runs": { "type": "array", "maxItems": 50, "items": { "$ref": "#/$defs/TraceRun" }, "description": "Newest last. D-57." }
+      }
+    },
+    "StateResponse": {
+      "type": "object", "additionalProperties": false,
+      "required": ["seq", "sessions", "daemon", "capabilities"],
+      "properties": {
+        "seq": { "type": "integer", "minimum": 0 },
+        "sessions": { "type": "array", "items": { "$ref": "session.schema.json" } },
+        "daemon": { "$ref": "#/$defs/DaemonInfo" },
+        "capabilities": { "$ref": "#/$defs/Capabilities" }
+      }
+    },
+    "RestoreResponse": {
+      "type": "object", "additionalProperties": false, "required": ["result", "session"],
+      "properties": { "result": { "$ref": "session.schema.json#/$defs/FocusResult" }, "session": { "$ref": "session.schema.json" } }
+    },
+    "SessionResponse": {
+      "type": "object", "additionalProperties": false, "required": ["session"],
+      "properties": { "session": { "$ref": "session.schema.json" } }
+    },
+    "WsServerMessage": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false, "required": ["type", "seq", "state"],
+          "properties": { "type": { "const": "hello" }, "seq": { "type": "integer" }, "state": { "$ref": "#/$defs/StateResponse" } }
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["type", "seq", "session"],
+          "properties": { "type": { "const": "session.upsert" }, "seq": { "type": "integer" }, "session": { "$ref": "session.schema.json" } }
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["type", "seq", "id"],
+          "properties": { "type": { "const": "session.remove" }, "seq": { "type": "integer" }, "id": { "$ref": "session.schema.json#/$defs/SessionId" } }
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["type", "seq", "daemon", "capabilities"],
+          "properties": { "type": { "const": "daemon.update" }, "seq": { "type": "integer" }, "daemon": { "$ref": "#/$defs/DaemonInfo" }, "capabilities": { "$ref": "#/$defs/Capabilities" } }
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["type", "seq", "notification"],
+          "properties": {
+            "type": { "const": "notify" }, "seq": { "type": "integer" },
+            "notification": { "$ref": "#/$defs/OsNotification" }
+          },
+          "description": "Mirror of every OS notification sent, so the page can raise a Web Notification when the OS channel is unavailable and highlight the card."
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["type", "seq", "sessionId"],
+          "properties": { "type": { "const": "highlight" }, "seq": { "type": "integer" }, "sessionId": { "$ref": "session.schema.json#/$defs/SessionId" } },
+          "description": "Sent when a notification click could not restore and fell back to opening the page (AC-09)."
+        }
+      ]
+    },
+    "WsClientMessage": {
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["type"], "properties": { "type": { "const": "ping" } } }
+      ]
+    },
+    "OsNotification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sessionId", "title", "body", "urgency", "tag"],
+      "properties": {
+        "sessionId": { "oneOf": [{ "type": "null" }, { "$ref": "session.schema.json#/$defs/SessionId" }] },
+        "title": { "type": "string", "maxLength": 64 },
+        "body": { "type": "string", "maxLength": 180 },
+        "urgency": { "enum": ["low", "normal", "critical"] },
+        "tag": { "type": "string", "maxLength": 140 }
+      }
+    }
+  }
+}

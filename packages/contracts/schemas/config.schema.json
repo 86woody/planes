@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mission-control.local/contracts/config.schema.json",
+  "title": "Config",
+  "description": "<configDir>/config.json. Every property is optional in the file; the daemon fills defaults (the 'default' keywords) with Ajv useDefaults. The resolved object (all properties present) is the TS type Config.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "const": 1, "default": 1 },
+    "port": { "type": "integer", "minimum": 1024, "maximum": 65535, "default": 47800 },
+    "notifications": {
+      "type": "object", "additionalProperties": false, "default": {},
+      "properties": {
+        "enabled": { "type": "boolean", "default": true },
+        "on": {
+          "type": "object", "additionalProperties": false, "default": {},
+          "properties": {
+            "permission": { "type": "boolean", "default": true },
+            "input": { "type": "boolean", "default": true },
+            "error": { "type": "boolean", "default": true },
+            "done": { "type": "boolean", "default": true }
+          }
+        },
+        "suppressWhenFocused": { "type": "boolean", "default": true },
+        "quietHours": {
+          "default": null,
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object", "additionalProperties": false, "required": ["start", "end"],
+              "properties": {
+                "start": { "type": "string", "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$" },
+                "end": { "type": "string", "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$" }
+              }
+            }
+          ]
+        },
+        "renotifyMinutes": { "type": "integer", "minimum": 0, "maximum": 240, "default": 0 },
+        "sound": { "type": "boolean", "default": true }
+      }
+    },
+    "restore": {
+      "type": "object", "additionalProperties": false, "default": {},
+      "properties": {
+        "maximize": { "enum": ["always", "if-minimized", "never"], "default": "always" },
+        "ackOnRestore": { "type": "boolean", "default": true },
+        "windowsForegroundStrategy": { "enum": ["alt-key", "plain"], "default": "alt-key" }
+      }
+    },
+    "sessions": {
+      "type": "object", "additionalProperties": false, "default": {},
+      "properties": {
+        "retainEndedHours": { "type": "number", "minimum": 0, "maximum": 720, "default": 24 },
+        "lostAfterHours": { "type": "number", "minimum": 0.1, "maximum": 720, "default": 12 },
+        "capturePromptText": { "type": "boolean", "default": true },
+        "livenessIntervalSeconds": { "type": "integer", "minimum": 1, "maximum": 60, "default": 5 }
+      }
+    },
+    "adapters": {
+      "type": "object", "additionalProperties": false, "default": {},
+      "properties": {
+        "claude-code": {
+          "type": "object", "additionalProperties": false, "default": {},
+          "properties": { "enabled": { "type": "boolean", "default": true } }
+        },
+        "codex": {
+          "type": "object", "additionalProperties": false, "default": {},
+          "properties": { "enabled": { "type": "boolean", "default": true } }
+        },
+        "shell": {
+          "type": "object", "additionalProperties": false, "default": {},
+          "properties": {
+            "enabled": { "type": "boolean", "default": false },
+            "notifyAfterSeconds": { "type": "integer", "minimum": 1, "maximum": 86400, "default": 60 }
+          }
+        },
+        "generic": {
+          "type": "object", "additionalProperties": false, "default": {},
+          "properties": { "enabled": { "type": "boolean", "default": true } }
+        }
+      }
+    },
+    "ui": {
+      "type": "object", "additionalProperties": false, "default": {},
+      "properties": {
+        "theme": { "enum": ["console", "console-high-contrast"], "default": "console" },
+        "reducedMotion": { "enum": ["system", "always", "never"], "default": "system" },
+        "showEnded": { "type": "boolean", "default": true }
+      }
+    },
+    "linux": {
+      "type": "object", "additionalProperties": false, "default": {},
+      "properties": {
+        "waylandBackend": { "enum": ["auto", "sway", "hyprland", "kwin", "gnome-extension", "none"], "default": "auto" }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "origin": {"os":"linux","env":{"WSL_DISTRO_NAME":"Ubuntu"},"ancestry":[{"pid":812,"name":"claude","startTime":"1000"},{"pid":800,"name":"bash","startTime":"900"}],"console":null},
+  "host": {"kind":"unknown","app":null,"display":"win32","multiplexer":null,"os":"windows"},
+  "windows": [
+    {"hwnd":"0x0000000000000E01","pid":5000,"exe":"WindowsTerminal.exe","className":"CASCADIA_HOSTING_WINDOW_CLASS","title":"Ubuntu","visible":true,"owner":null,"rootOwner":null,"elevated":false},
+    {"hwnd":"0x0000000000000E02","pid":7000,"exe":"notepad.exe","className":"Notepad","title":"notes","visible":true,"owner":null,"rootOwner":null,"elevated":false}
+  ],
+  "lookup": []
+}
